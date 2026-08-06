@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Marki A-Z Biuro – producenci, serie i modele</title>
-  <meta name="description" content="Poznaj producentów, marki, serie i modele produktów dostępnych w A-Z Biuro. Uporządkowana baza marek dla biura, szkoły, firmy i domu.">
+  <meta name="description" content="Poznaj producentów, marki, serie i modele produktów dostępnych w A-Z Biuro. Uporządkowana baza marek dla firm, szkół i instytucji.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://marki.eazbiuro.pl/">
   <meta name="theme-color" content="#cd0000">
@@ -19,17 +19,16 @@
       --red: #cd0000;
       --red-dark: #a90000;
       --blue: #105fa6;
-      --blue-dark: #0b4d87;
       --gray: #7b848d;
-      --ink: #252b32;
-      --muted: #5d6771;
-      --line: #e4e8ec;
-      --soft: #f5f7f9;
-      --footer: #252b31;
-      --radius: 8px;
-      --radius-lg: 18px;
-      --shadow: 0 12px 34px rgba(27, 39, 51, 0.08);
-      --container: 1280px;
+      --ink: #152431;
+      --muted: #5f6d78;
+      --light: #f5f7f9;
+      --line: #e1e6ea;
+      --white: #ffffff;
+      --container: 1220px;
+      --shadow: 0 18px 50px rgba(18, 37, 53, 0.11);
+      --shadow-soft: 0 10px 30px rgba(18, 37, 53, 0.07);
+      --radius: 22px;
     }
 
     * {
@@ -49,17 +48,20 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    img {
+    img,
+    svg {
+      display: block;
       max-width: 100%;
-      height: auto;
     }
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
     button {
       font: inherit;
+      cursor: pointer;
     }
 
     .container {
@@ -67,216 +69,274 @@
       margin-inline: auto;
     }
 
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
     .skip-link {
       position: fixed;
-      top: 8px;
-      left: 8px;
-      z-index: 1000;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--blue);
-      border-radius: var(--radius);
-      transform: translateY(-150%);
+      top: -80px;
+      left: 20px;
+      z-index: 2000;
+      padding: 12px 18px;
+      color: var(--ink);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      font-weight: 800;
     }
 
     .skip-link:focus {
-      transform: translateY(0);
+      top: 20px;
     }
 
-    /* =====================================================
-       WSPÓLNY NAGŁÓWEK – TEN SAM UKŁAD NA KAŻDEJ PODSTRONIE
-       ===================================================== */
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
 
-    .site-header {
+    /* =========================================================
+       NAGŁÓWEK – WYMIARY I TYPOGRAFIA JAK W PORADNIKU A-Z BIURO
+       ========================================================= */
+
+    .az-header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 2px 12px rgba(27, 39, 51, 0.05);
-      backdrop-filter: blur(10px);
-    }
-
-    .header-inner {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    .site-brand {
-      min-width: 330px;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      text-decoration: none;
-    }
-
-    .site-logo {
-      width: 142px;
-      max-height: 52px;
-      flex: 0 0 auto;
-      object-fit: contain;
-      object-position: left center;
-    }
-
-    .brand-separator {
-      width: 1px;
-      height: 44px;
-      background: var(--line);
-      flex: 0 0 auto;
-    }
-
-    .brand-name {
-      display: block;
-      color: var(--ink);
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.15;
-      white-space: nowrap;
-    }
-
-    .brand-description {
-      display: block;
-      margin-top: 4px;
-      color: var(--gray);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .menu-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      margin-left: auto;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      color: var(--ink);
+      z-index: 1000;
       background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      cursor: pointer;
+      border-top: 1px solid #eceff2;
+      border-bottom: 1px solid #e1e6ea;
+      transition: box-shadow 0.2s ease;
     }
 
-    .menu-toggle svg {
-      width: 23px;
-      height: 23px;
+    .az-header.is-scrolled {
+      box-shadow: 0 8px 24px rgba(17, 31, 45, 0.08);
     }
 
-    .header-navigation {
+    .az-header-inner {
+      width: calc(100% - 40px);
+      max-width: 1660px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-inline: auto;
+    }
+
+    .az-brand {
       min-width: 0;
       display: flex;
       align-items: center;
-      gap: 2px;
-      margin-left: auto;
+      flex: 0 0 auto;
+      color: var(--ink);
     }
 
-    .nav-placeholder,
-    .nav-link {
-      position: relative;
-      min-height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 10px;
-      border-radius: var(--radius);
-      font-size: 13px;
+    .az-brand-logo {
+      width: 195px;
+      height: auto;
+      max-height: 72px;
+      object-fit: contain;
+      object-position: left center;
+      flex: 0 0 auto;
+    }
+
+    .az-brand-divider {
+      width: 1px;
+      height: 38px;
+      margin: 0 10px;
+      background: #dfe4e8;
+      flex: 0 0 auto;
+    }
+
+    .az-brand-label {
+      color: #26333f;
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 16px;
       font-weight: 700;
-      line-height: 1.2;
+      line-height: 1.25;
+      letter-spacing: 0;
       white-space: nowrap;
     }
 
-    .nav-placeholder {
-      color: #404851;
+    .az-nav {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 13px;
+      font-family: "Open Sans", Arial, sans-serif;
+    }
+
+    .az-nav > a,
+    .az-nav > .az-nav-item {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      color: #26333f;
+      border-radius: 8px;
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .az-nav > .az-nav-item {
       cursor: default;
     }
 
-    .nav-placeholder:hover,
-    .nav-placeholder.is-current {
+    .az-nav > a:hover,
+    .az-nav > a:focus-visible,
+    .az-nav > .az-nav-item:hover {
       color: var(--red);
-      background: #fff1f1;
+      background: transparent;
     }
 
-    .nav-placeholder.is-current::after {
-      position: absolute;
-      right: 10px;
-      bottom: 3px;
-      left: 10px;
-      height: 2px;
-      content: "";
-      background: var(--red);
-      border-radius: 999px;
-    }
-
-    .nav-link {
-      text-decoration: none;
-      transition:
-        color 0.2s ease,
-        background-color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .nav-link-service {
+    .az-nav .az-nav-service {
       color: var(--blue);
     }
 
-    .nav-link-service:hover,
-    .nav-link-service:focus-visible {
-      color: #fff;
-      background: var(--blue);
-    }
-
-    .nav-link-contact {
-      color: #404851;
-    }
-
-    .nav-link-contact:hover,
-    .nav-link-contact:focus-visible {
+    .az-nav .az-nav-service:hover,
+    .az-nav .az-nav-service:focus-visible {
       color: var(--red);
-      background: #fff1f1;
     }
 
-    .nav-link-shop {
-      min-height: 42px;
-      margin-left: 5px;
-      padding-inline: 17px;
+    .az-nav .az-nav-cta {
+      width: 165px;
+      height: 54px;
+      min-height: 54px;
+      padding: 10px 14px;
       color: #fff;
       background: var(--red);
-      box-shadow: 0 7px 18px rgba(205, 0, 0, 0.17);
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(205, 0, 0, 0.14);
+      font-size: 14px;
     }
 
-    .nav-link-shop:hover,
-    .nav-link-shop:focus-visible {
+    .az-nav .az-nav-cta:hover,
+    .az-nav .az-nav-cta:focus-visible {
       color: #fff;
-      background: var(--red-dark);
-      transform: translateY(-1px);
+      background: var(--red);
     }
 
-    /* ==================
-       STRONA GŁÓWNA
-       ================== */
-
-    main {
-      overflow: hidden;
+    .az-nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 11px;
+      border: 0;
+      border-radius: 10px;
+      background: #f3f6f8;
     }
+
+    .az-nav-toggle > span {
+      display: block;
+      height: 2px;
+      margin: 5px 0;
+      background: var(--ink);
+      transition: 0.2s ease;
+    }
+
+    .az-menu-backdrop {
+      display: none;
+    }
+
+    /* Duży monitor – proporcje używane przez powiązane serwisy */
+    @media (min-width: 1751px) {
+      .az-header-inner {
+        width: calc(100% - 80px);
+        max-width: none;
+        height: 136px;
+        gap: 34px;
+      }
+
+      .az-brand-logo {
+        width: 342px;
+        max-height: 92px;
+      }
+
+      .az-brand-divider {
+        height: 58px;
+        margin: 0 18px;
+      }
+
+      .az-brand-label {
+        font-size: 18px;
+      }
+
+      .az-nav {
+        gap: 22px;
+      }
+
+      .az-nav > a,
+      .az-nav > .az-nav-item {
+        min-height: 52px;
+        font-size: 17px;
+      }
+
+      .az-nav .az-nav-cta {
+        width: 220px;
+        height: 66px;
+        min-height: 66px;
+        padding: 14px 22px;
+        font-size: 17px;
+      }
+    }
+
+    /* =========================================================
+       TREŚĆ STRONY GŁÓWNEJ
+       ========================================================= */
 
     .hero {
       position: relative;
-      padding: 82px 0 70px;
-      background:
-        radial-gradient(circle at 82% 12%, rgba(16, 95, 166, 0.12), transparent 30%),
-        radial-gradient(circle at 5% 94%, rgba(205, 0, 0, 0.08), transparent 27%),
-        linear-gradient(180deg, #fbfcfd 0%, #f4f7f9 100%);
-      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      padding: 58px 0 72px;
+      background: linear-gradient(130deg, #fff 0%, #fff 45%, #eef5fb 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      left: -180px;
+      top: 40px;
+      width: 420px;
+      height: 420px;
+      content: "";
+      background: rgba(205, 0, 0, 0.13);
+      border-radius: 999px;
+      filter: blur(80px);
+      opacity: 0.38;
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -170px;
+      top: 0;
+      width: 500px;
+      height: 500px;
+      content: "";
+      background: rgba(16, 95, 166, 0.16);
+      border-radius: 999px;
+      filter: blur(80px);
+      opacity: 0.38;
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+      grid-template-columns: 1.03fr 0.97fr;
       align-items: center;
       gap: 58px;
     }
@@ -284,297 +344,248 @@
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      margin-bottom: 16px;
+      gap: 8px;
       color: var(--red);
-      font-size: 13px;
+      font-size: 0.72rem;
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
-      width: 32px;
-      height: 3px;
+      width: 8px;
+      height: 8px;
       content: "";
       background: var(--red);
-      border-radius: 999px;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(205, 0, 0, 0.1);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      line-height: 1.15;
     }
 
     h1 {
-      max-width: 780px;
-      margin: 0;
-      color: var(--ink);
-      font-size: clamp(38px, 5.5vw, 66px);
-      font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -0.035em;
+      margin: 22px 0 20px;
+      font-size: clamp(2.7rem, 5vw, 5.2rem);
+      letter-spacing: -0.055em;
     }
 
-    h1 strong {
+    h1 span {
       color: var(--red);
-      font-weight: 800;
     }
 
     .hero-lead {
-      max-width: 760px;
-      margin: 24px 0 0;
+      max-width: 680px;
+      margin: 0 0 28px;
       color: var(--muted);
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.75;
+      font-size: 1.12rem;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 31px;
+      margin-top: 26px;
     }
 
     .button {
-      min-height: 48px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 20px;
-      border: 2px solid transparent;
-      border-radius: var(--radius);
-      font-size: 14px;
+      gap: 8px;
+      padding: 13px 19px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 0.8rem;
       font-weight: 800;
-      text-decoration: none;
-      transition:
-        color 0.2s ease,
-        background-color 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+      transition: 0.2s ease;
     }
 
-    .button:hover,
-    .button:focus-visible {
+    .button-primary {
+      color: #fff;
+      background: var(--red);
+    }
+
+    .button-primary:hover {
+      color: #fff;
+      background: var(--red-dark);
       transform: translateY(-2px);
     }
 
-    .button-store {
-      color: #fff;
-      background: var(--red);
-      border-color: var(--red);
-    }
-
-    .button-store:hover,
-    .button-store:focus-visible {
-      background: var(--red-dark);
-      border-color: var(--red-dark);
-    }
-
-    .button-service {
-      color: var(--blue);
+    .button-ghost {
+      color: var(--ink);
       background: #fff;
-      border-color: #b9d5eb;
+      border-color: #ccd5dc;
     }
 
-    .button-service:hover,
-    .button-service:focus-visible {
-      color: #fff;
-      background: var(--blue);
+    .button-ghost:hover {
+      color: var(--blue);
       border-color: var(--blue);
     }
 
     .hero-panel {
       position: relative;
-      padding: 29px;
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(16, 95, 166, 0.14);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 22px 60px rgba(27, 39, 51, 0.12);
-    }
-
-    .hero-panel::before {
-      position: absolute;
-      top: -1px;
-      right: 25px;
-      left: 25px;
-      height: 4px;
-      content: "";
-      background: linear-gradient(90deg, var(--red), rgba(242, 70, 12, 0.85), var(--blue));
-      border-radius: 0 0 999px 999px;
+      padding: 36px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
     }
 
     .hero-panel h2 {
-      margin: 0;
-      font-size: 20px;
-      font-weight: 800;
-      line-height: 1.3;
+      margin-bottom: 10px;
+      font-size: 1.45rem;
     }
 
-    .panel-intro {
-      margin: 8px 0 21px;
+    .hero-panel > p {
+      margin: 0 0 22px;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 0.84rem;
     }
 
-    .panel-list {
+    .steps {
       display: grid;
-      gap: 11px;
+      gap: 12px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .panel-list li {
+    .steps li {
       display: grid;
-      grid-template-columns: 43px minmax(0, 1fr);
+      grid-template-columns: 44px minmax(0, 1fr);
       align-items: center;
-      gap: 13px;
-      padding: 11px 13px;
-      background: var(--soft);
-      border: 1px solid #edf0f2;
-      border-radius: 12px;
+      gap: 14px;
+      padding: 13px;
+      background: #f5f7f9;
+      border: 1px solid #e6ebef;
+      border-radius: 14px;
     }
 
-    .panel-number {
-      width: 43px;
-      height: 43px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .step-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
       color: #fff;
       background: var(--blue);
-      border-radius: 11px;
-      font-size: 14px;
+      border-radius: 12px;
+      font-size: 0.72rem;
       font-weight: 800;
     }
 
-    .panel-list li:nth-child(2) .panel-number {
+    .steps li:nth-child(2) .step-number {
       background: var(--red);
     }
 
-    .panel-list li:nth-child(3) .panel-number {
-      background: #6d7680;
+    .steps li:nth-child(3) .step-number {
+      background: var(--gray);
     }
 
-    .panel-list strong {
+    .steps strong {
       display: block;
-      font-size: 14px;
+      font-size: 0.82rem;
     }
 
-    .panel-list small {
+    .steps small {
       display: block;
       margin-top: 2px;
       color: var(--muted);
-      font-size: 12px;
-      line-height: 1.5;
+      font-size: 0.69rem;
     }
 
     .section {
-      padding: 82px 0;
+      padding: 105px 0;
     }
 
-    .section-soft {
-      background: var(--soft);
+    .section-light {
+      background: var(--light);
     }
 
     .section-heading {
-      max-width: 790px;
-      margin-bottom: 34px;
+      display: grid;
+      grid-template-columns: 1fr minmax(300px, 520px);
+      align-items: end;
+      gap: 50px;
+      margin-bottom: 42px;
     }
 
-    .section-kicker {
-      display: block;
-      margin-bottom: 9px;
-      color: var(--red);
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    .section-heading h2 {
+      margin: 10px 0 0;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      letter-spacing: -0.04em;
     }
 
-    .section-heading h2,
-    .cta-copy h2 {
+    .section-heading > p {
       margin: 0;
-      font-size: clamp(29px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -0.025em;
-    }
-
-    .section-intro {
-      max-width: 750px;
-      margin: 14px 0 0;
       color: var(--muted);
-      font-size: 17px;
-      line-height: 1.75;
     }
 
     .card-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
     .feature-card {
-      min-height: 240px;
-      padding: 27px;
+      position: relative;
+      min-height: 275px;
+      padding: 28px;
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+      border-radius: var(--radius);
+      box-shadow: 0 1px 0 rgba(17, 31, 45, 0.02);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     }
 
     .feature-card:hover {
-      border-color: rgba(16, 95, 166, 0.28);
-      box-shadow: 0 17px 40px rgba(27, 39, 51, 0.11);
+      border-color: #ccd6dd;
+      box-shadow: var(--shadow-soft);
       transform: translateY(-4px);
     }
 
     .card-icon {
-      width: 50px;
-      height: 50px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 19px;
-      color: var(--blue);
-      background: #eef6fc;
-      border-radius: 14px;
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      color: var(--red);
+      background: #fff0f0;
+      border-radius: 15px;
+      font-size: 1rem;
+      font-weight: 800;
     }
 
     .feature-card:nth-child(2n) .card-icon {
-      color: var(--red);
-      background: #fff0f0;
-    }
-
-    .card-icon svg {
-      width: 26px;
-      height: 26px;
-      stroke-width: 1.8;
+      color: var(--blue);
+      background: #edf6ff;
     }
 
     .feature-card h3 {
-      margin: 0;
-      font-size: 19px;
-      font-weight: 800;
-      line-height: 1.3;
+      margin: 24px 0 12px;
+      font-size: 1.25rem;
     }
 
     .feature-card p {
-      margin: 10px 0 0;
+      margin: 0 0 25px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 0.84rem;
     }
 
     .card-status {
-      display: inline-flex;
-      margin-top: 19px;
-      padding: 5px 10px;
-      color: #68727b;
-      background: #f0f2f4;
+      position: absolute;
+      left: 28px;
+      bottom: 25px;
+      padding: 7px 10px;
+      color: #5f6d78;
+      background: #f3f6f8;
+      border: 1px solid #d7dfe5;
       border-radius: 999px;
-      font-size: 11px;
+      font-size: 0.64rem;
       font-weight: 800;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -582,35 +593,35 @@
 
     .ecosystem-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
 
     .ecosystem-card {
-      padding: 23px 21px;
+      min-height: 230px;
+      padding: 25px;
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 20px;
     }
 
     .ecosystem-card.is-active {
       color: #fff;
-      background: linear-gradient(135deg, var(--red), #a60000);
+      background: var(--red);
       border-color: var(--red);
-      box-shadow: 0 16px 40px rgba(205, 0, 0, 0.18);
+      box-shadow: 0 18px 45px rgba(205, 0, 0, 0.18);
     }
 
     .ecosystem-step {
-      width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 17px;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
       color: var(--blue);
-      background: #eef6fc;
-      border-radius: 10px;
-      font-size: 13px;
+      background: #edf6ff;
+      border-radius: 12px;
+      font-size: 0.7rem;
       font-weight: 800;
     }
 
@@ -620,599 +631,499 @@
     }
 
     .ecosystem-card h3 {
-      margin: 0;
-      font-size: 17px;
-      font-weight: 800;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
     }
 
     .ecosystem-card p {
-      margin: 8px 0 0;
+      margin: 0;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
+      font-size: 0.78rem;
     }
 
     .ecosystem-card.is-active p {
-      color: rgba(255, 255, 255, 0.83);
+      color: #f8e8e8;
     }
 
-    .cta-section {
-      padding: 0 0 82px;
-      background: var(--soft);
+    /* =========================================================
+       MODUŁ PRZED STOPKĄ – TEN SAM CZERWONY, KOMPAKTOWY FORMAT
+       ========================================================= */
+
+    .store-cta {
+      padding: 0 0 95px;
+      background: #fff;
     }
 
-    .cta-panel {
+    .store-cta-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-columns: 78px minmax(0, 1fr) auto;
       align-items: center;
-      gap: 30px;
-      padding: 39px 43px;
+      gap: 28px;
+      padding: 34px 40px;
       color: #fff;
-      background: linear-gradient(120deg, rgba(16, 95, 166, 0.98), rgba(8, 65, 115, 0.99));
-      border-radius: var(--radius-lg);
-      box-shadow: 0 18px 50px rgba(16, 95, 166, 0.19);
+      background: var(--red);
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(205, 0, 0, 0.2);
     }
 
-    .cta-copy h2 {
-      color: #fff;
-      font-size: clamp(27px, 3.5vw, 38px);
-    }
-
-    .cta-copy p {
-      max-width: 760px;
-      margin: 11px 0 0;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 15px;
-    }
-
-    .cta-panel .button-store {
-      min-width: 180px;
-    }
-
-    /* =================================================
-       WSPÓLNA STOPKA – TEN SAM UKŁAD NA KAŻDEJ PODSTRONIE
-       ================================================= */
-
-    .site-footer {
-      color: #fff;
-      background: var(--footer);
-      border-top: 5px solid var(--red);
-    }
-
-    .footer-main {
-      padding: 57px 0 41px;
-    }
-
-    .footer-grid {
+    .store-cta-icon {
+      width: 78px;
+      height: 78px;
       display: grid;
-      grid-template-columns: 1.25fr 0.9fr 0.9fr 0.9fr;
-      gap: 40px;
+      place-items: center;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 18px;
+      font-size: 1.35rem;
+      font-weight: 800;
     }
 
-    .footer-logo-box {
+    .store-cta .eyebrow {
+      color: #f2cccc;
+    }
+
+    .store-cta .eyebrow::before {
+      background: #fff;
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.12);
+    }
+
+    .store-cta h2 {
+      margin: 8px 0 7px;
+      color: #fff;
+      font-size: 1.65rem;
+    }
+
+    .store-cta-copy > p {
+      margin: 0;
+      color: #f8e8e8;
+      font-size: 0.82rem;
+    }
+
+    .store-cta-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px 14px;
+      margin: 16px 0 0;
+      padding: 0;
+      color: #fff;
+      list-style: none;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .store-cta-topics li {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .store-cta-topics li::before {
+      position: absolute;
+      left: 0;
+      content: "✓";
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .store-cta-actions {
+      display: grid;
+      gap: 9px;
+      min-width: 176px;
+    }
+
+    .button-white {
+      color: var(--red);
+      background: #fff;
+      white-space: nowrap;
+    }
+
+    .button-white:hover {
+      color: var(--red);
+      background: #f5f7f9;
+      transform: translateY(-2px);
+    }
+
+    .button-white-outline {
+      color: #fff;
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.72);
+      white-space: nowrap;
+    }
+
+    .button-white-outline:hover {
+      color: var(--red);
+      background: #fff;
+      border-color: #fff;
+    }
+
+    /* =========================================================
+       JASNA STOPKA – TEN SAM UKŁAD I KOLORY CO W POPRZEDNICH
+       ========================================================= */
+
+    .az-footer {
+      padding: 0 0 20px;
+      color: #26333f;
+      background: #f5f7f9;
+      border-top: 4px solid var(--red);
+    }
+
+    .az-footer-grid {
+      display: grid;
+      grid-template-columns: 1.7fr repeat(3, 1fr);
+      gap: 48px;
+      padding-top: 54px;
+    }
+
+    .az-footer-brand p {
+      max-width: 360px;
+      margin: 18px 0 0;
+      color: var(--gray);
+      font-size: 0.78rem;
+    }
+
+    .az-footer-logo-link {
       width: fit-content;
-      min-height: 62px;
       display: inline-flex;
       align-items: center;
-      padding: 7px 13px;
+      padding: 8px 12px;
       background: #fff;
-      border-radius: 10px;
+      border: 1px solid rgba(123, 132, 141, 0.28);
+      border-radius: 8px;
+      box-shadow: none;
     }
 
-    .footer-logo {
-      width: 145px;
-      max-height: 49px;
+    .az-footer-logo {
+      width: 250px;
+      height: 68px;
       object-fit: contain;
     }
 
-    .footer-brand-title {
+    .az-footer-column h2 {
+      margin: 0 0 16px;
+      color: var(--red);
+      font-size: 0.77rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .az-footer-column a,
+    .az-footer-column .footer-placeholder {
       display: block;
-      margin-top: 19px;
-      font-size: 18px;
-      font-weight: 800;
+      margin: 9px 0;
+      color: #26333f;
+      font-size: 0.74rem;
     }
 
-    .footer-description {
-      max-width: 340px;
-      margin: 9px 0 0;
-      color: #adb7c0;
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    .footer-column h2 {
-      margin: 0 0 17px;
-      color: #fff;
-      font-size: 15px;
-      font-weight: 800;
-    }
-
-    .footer-list {
-      display: grid;
-      gap: 9px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .footer-link,
-    .footer-placeholder {
-      width: fit-content;
-      display: inline-flex;
-      min-height: 23px;
-      align-items: center;
-      font-size: 13px;
-      line-height: 1.45;
+    .az-footer-column a:hover {
+      color: var(--blue);
     }
 
     .footer-placeholder {
-      color: #adb7c0;
+      cursor: default;
     }
 
-    .footer-link {
-      color: #79b9ee;
+    .az-footer-disclaimer {
+      display: block;
+      margin-top: 4px;
+      margin-bottom: 24px;
+      padding: 16px 18px;
+      color: #26333f;
+      background: rgba(16, 95, 166, 0.06);
+      border: 1px solid rgba(16, 95, 166, 0.24);
+      border-left: 4px solid var(--blue);
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .az-footer-disclaimer strong {
+      color: var(--red);
+    }
+
+    .az-footer-disclaimer a {
+      color: var(--blue);
       font-weight: 700;
-      text-decoration: none;
     }
 
-    .footer-link:hover,
-    .footer-link:focus-visible {
-      color: #fff;
-    }
-
-    .footer-shop {
-      width: fit-content;
-      min-height: 41px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 3px;
-      padding: 8px 16px;
-      color: #fff;
-      background: var(--red);
-      border-radius: var(--radius);
-      font-size: 13px;
-      font-weight: 800;
-      text-decoration: none;
-    }
-
-    .footer-shop:hover,
-    .footer-shop:focus-visible {
-      background: var(--red-dark);
-    }
-
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-bottom-inner {
-      min-height: 65px;
+    .az-footer-bottom {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 25px;
-      color: #909ba5;
-      font-size: 12px;
+      margin-top: 0;
+      padding-top: 18px;
+      color: var(--gray);
+      border-top: 1px solid rgba(123, 132, 141, 0.3);
+      font-size: 0.68rem;
     }
 
-    .footer-bottom-inner p {
-      margin: 0;
-    }
+    /* =========================================================
+       RESPONSYWNOŚĆ
+       ========================================================= */
 
-    .footer-domain {
-      color: #cbd3da;
-      font-weight: 700;
-    }
-
-    @media (max-width: 1160px) {
-      .site-brand {
-        min-width: 245px;
+    @media (max-width: 1300px) {
+      .az-nav {
+        gap: 9px;
       }
 
-      .site-logo {
-        width: 128px;
-      }
-
-      .brand-name {
-        font-size: 16px;
-      }
-
-      .header-inner {
-        gap: 18px;
-      }
-
-      .nav-placeholder,
-      .nav-link {
-        padding-inline: 8px;
-        font-size: 12px;
+      .az-nav > a,
+      .az-nav > .az-nav-item {
+        font-size: 12.5px;
       }
     }
 
-    @media (max-width: 1000px) {
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .header-inner {
-        position: relative;
-        flex-wrap: wrap;
-        padding-block: 13px;
-      }
-
-      .header-navigation {
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 4px;
-        padding: 10px 0 3px;
-        border-top: 1px solid var(--line);
-      }
-
-      .header-navigation.is-open {
-        display: flex;
-      }
-
-      .nav-placeholder,
-      .nav-link {
-        min-height: 42px;
-        justify-content: flex-start;
-        padding-inline: 13px;
-        font-size: 13px;
-      }
-
-      .nav-placeholder.is-current::after {
-        display: none;
-      }
-
-      .nav-link-shop {
-        margin-left: 0;
-        justify-content: center;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .hero-panel {
-        max-width: 720px;
-      }
-
-      .card-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .ecosystem-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer-grid {
-        grid-template-columns: 1.2fr 1fr 1fr;
-      }
-
-      .footer-column:last-child {
-        grid-column: 2 / 4;
-      }
-    }
-
-    @media (max-width: 700px) {
+    @media (max-width: 1100px) {
       .container {
         width: min(calc(100% - 28px), var(--container));
       }
 
-      .site-brand {
-        min-width: 0;
-        gap: 10px;
+      .az-header-inner {
+        width: min(calc(100% - 28px), var(--container));
+        height: 78px;
+        gap: 18px;
       }
 
-      .site-logo {
-        width: 119px;
+      .az-brand-logo {
+        width: 190px;
+        max-height: 60px;
       }
 
-      .brand-separator {
-        height: 39px;
+      .az-brand-divider {
+        height: 34px;
       }
 
-      .brand-name {
-        font-size: 15px;
+      .az-brand-label {
+        font-size: 14px;
       }
 
-      .brand-description {
+      .az-nav-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      .az-menu-backdrop {
+        position: fixed;
+        inset: 78px 0 0;
+        z-index: 998;
+        background: rgba(15, 25, 35, 0.34);
+      }
+
+      .az-menu-backdrop.is-open {
+        display: block;
+      }
+
+      .az-nav {
+        position: fixed;
+        top: 78px;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        width: min(88vw, 390px);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 26px;
+        background: #fff;
+        box-shadow: -20px 20px 50px rgba(17, 31, 45, 0.14);
+        transform: translateX(105%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.25s ease, visibility 0.25s ease;
+      }
+
+      .az-nav.is-open {
+        transform: none;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .az-nav > a,
+      .az-nav > .az-nav-item {
+        min-height: 48px;
+        justify-content: flex-start;
+        padding: 14px;
+        font-size: 16px;
+      }
+
+      .az-nav .az-nav-cta {
+        width: auto;
+        height: auto;
+        min-height: 54px;
+        justify-content: center;
+        margin-top: 15px;
+        font-size: 16px;
+      }
+
+      .az-nav-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      .az-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .az-nav-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      body.az-menu-open {
+        overflow: hidden;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        max-width: 700px;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .ecosystem-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .store-cta-inner {
+        grid-template-columns: 78px 1fr;
+      }
+
+      .store-cta-actions {
+        grid-column: 2;
+        grid-template-columns: repeat(2, auto);
+        justify-content: start;
+      }
+
+      .az-footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr;
+      }
+
+      .az-footer-grid > div:last-child {
+        display: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .az-brand-logo {
+        width: 170px;
+      }
+
+      .az-brand-divider,
+      .az-brand-label {
         display: none;
       }
 
       .hero {
-        padding: 58px 0 54px;
+        padding-top: 38px;
       }
 
       h1 {
-        font-size: clamp(36px, 12vw, 50px);
+        font-size: 2.65rem;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading > p {
+        margin-top: 18px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ecosystem-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .store-cta {
+        padding-bottom: 70px;
+      }
+
+      .store-cta-inner {
+        grid-template-columns: 1fr;
+        padding: 30px;
+        border-radius: 18px;
+      }
+
+      .store-cta-icon {
+        display: none;
+      }
+
+      .store-cta-actions {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+      }
+
+      .az-footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .az-footer-grid > div:nth-child(2),
+      .az-footer-grid > div:nth-child(3),
+      .az-footer-grid > div:nth-child(4) {
+        display: block;
+      }
+
+      .az-footer-bottom {
+        display: block;
+        text-align: center;
+      }
+
+      .az-footer-bottom span {
+        display: block;
+        margin: 4px;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .az-brand-logo {
+        width: 155px;
       }
 
       .hero-actions {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
       }
 
       .button {
         width: 100%;
       }
 
-      .section {
-        padding: 63px 0;
-      }
-
-      .card-grid,
-      .ecosystem-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-card {
-        min-height: auto;
-      }
-
-      .cta-section {
-        padding-bottom: 63px;
-      }
-
-      .cta-panel {
-        grid-template-columns: 1fr;
-        padding: 32px 24px;
-      }
-
-      .cta-panel .button-store {
-        width: 100%;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 33px;
-      }
-
-      .footer-column:last-child {
-        grid-column: auto;
-      }
-
-      .footer-bottom-inner {
-        min-height: 86px;
-        flex-direction: column;
-        justify-content: center;
-        gap: 4px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .site-logo {
-        width: 105px;
-      }
-
-      .brand-separator {
-        display: none;
-      }
-
-      .brand-name {
-        font-size: 14px;
-      }
-
       .hero-panel {
-        padding: 23px 18px;
-      }
-    }
-  
-    /* =====================================================
-       SEKCJA DLA FIRM – WZÓR SPÓJNY Z POZOSTAŁYMI SERWISAMI
-       ===================================================== */
-
-    .business-section {
-      padding: 0 0 82px;
-      background: var(--soft);
-    }
-
-    .business-panel {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 390px;
-      align-items: center;
-      gap: 42px;
-      padding: 44px;
-      color: #fff;
-      background:
-        radial-gradient(circle at 88% 15%, rgba(255, 255, 255, 0.13), transparent 27%),
-        linear-gradient(120deg, #105fa6 0%, #0b4d87 100%);
-      border-radius: var(--radius-lg);
-      box-shadow: 0 18px 50px rgba(16, 95, 166, 0.2);
-    }
-
-    .business-kicker {
-      display: block;
-      margin-bottom: 8px;
-      color: #bfe1fb;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .business-copy h2 {
-      max-width: 700px;
-      margin: 0;
-      color: #fff;
-      font-size: clamp(29px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.18;
-      letter-spacing: -0.025em;
-    }
-
-    .business-copy p {
-      max-width: 760px;
-      margin: 15px 0 0;
-      color: rgba(255, 255, 255, 0.84);
-      font-size: 15px;
-      line-height: 1.75;
-    }
-
-    .business-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .button-contact {
-      color: #fff;
-      background: transparent;
-      border-color: rgba(255, 255, 255, 0.72);
-    }
-
-    .button-contact:hover,
-    .button-contact:focus-visible {
-      color: var(--blue);
-      background: #fff;
-      border-color: #fff;
-    }
-
-    .business-topics {
-      display: grid;
-      gap: 11px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .business-topics li {
-      position: relative;
-      min-height: 51px;
-      display: flex;
-      align-items: center;
-      padding: 11px 18px 11px 46px;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .business-topics li::before {
-      position: absolute;
-      left: 18px;
-      width: 13px;
-      height: 13px;
-      content: "";
-      background: var(--red);
-      border: 3px solid rgba(255, 255, 255, 0.85);
-      border-radius: 50%;
-    }
-
-    /* ==========================
-       STOPKA ZGODNA Z SERWISAMI
-       ========================== */
-
-    .footer-main {
-      padding: 48px 0 36px;
-    }
-
-    .footer-intro {
-      max-width: 880px;
-      margin: 0 0 34px;
-      color: #c4ccd3;
-      font-size: 14px;
-      line-height: 1.75;
-    }
-
-    .footer-grid {
-      grid-template-columns: 1.35fr 0.8fr 0.8fr;
-      gap: 55px;
-    }
-
-    .footer-brand-lockup {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .footer-logo {
-      width: 145px;
-      max-height: 49px;
-      padding: 6px 11px;
-      background: #fff;
-      border-radius: 9px;
-      object-fit: contain;
-    }
-
-    .footer-brand-name {
-      max-width: 220px;
-      color: #fff;
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    .footer-main-list {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      column-gap: 20px;
-    }
-
-    .footer-note {
-      margin: 34px 0 0;
-      padding-top: 24px;
-      color: #929da7;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 1000px) {
-      .business-panel {
-        grid-template-columns: 1fr;
+        padding: 26px 20px;
       }
 
-      .business-topics {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer-grid {
-        grid-template-columns: 1.2fr 1fr 1fr;
-        gap: 34px;
-      }
-
-      .footer-column:last-child {
-        grid-column: auto;
+      .az-footer-logo {
+        width: 210px;
+        height: auto;
       }
     }
 
-    @media (max-width: 700px) {
-      .business-section {
-        padding-bottom: 63px;
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
 
-      .business-panel {
-        padding: 32px 24px;
-      }
-
-      .business-actions {
-        flex-direction: column;
-      }
-
-      .business-topics {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-brand-lockup {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .footer-main-list {
-        grid-template-columns: 1fr;
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
-
   </style>
 
   <script type="application/ld+json">
@@ -1232,121 +1143,102 @@
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Przejdź do treści</a>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
 
-  <!-- =========================================================
-       START WSPÓLNEGO NAGŁÓWKA
-       Jeden pasek – układ spójny z Poradnikiem i Centrum Wiedzy.
-       Po utworzeniu podstron elementy span zamieniamy na linki.
-       ========================================================= -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="site-brand" aria-label="Marki A-Z Biuro">
+  <!-- WSPÓLNY NAGŁÓWEK DLA WSZYSTKICH KOLEJNYCH STRON -->
+  <header class="site-header az-header" data-header>
+    <div class="az-header-inner">
+      <a class="az-brand" href="/" aria-label="Producenci, serie i modele A-Z Biuro — strona główna">
         <img
-          class="site-logo"
-          src="https://eazbiuro.pl/assets/upload/system/c36a4fb3-8787-4606-b122-ba77db2aeb98.png"
+          class="az-brand-logo"
+          src="https://poradnik.eazbiuro.pl/assets/logo-eazbiuro.png"
           alt="A-Z Biuro"
-          width="142"
-          height="52"
+          width="335"
+          height="90"
+          decoding="async"
         >
-
-        <span class="brand-separator" aria-hidden="true"></span>
-
-        <span class="brand-name">PRODUCENCI • SERIE • MODELE</span>
-      </div>
+        <span class="az-brand-divider" aria-hidden="true"></span>
+        <span class="az-brand-label">PRODUCENCI • SERIE • MODELE</span>
+      </a>
 
       <button
-        class="menu-toggle"
+        class="az-nav-toggle"
         type="button"
         aria-expanded="false"
-        aria-controls="header-navigation"
+        aria-controls="az-main-nav"
         aria-label="Otwórz menu"
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/>
-        </svg>
+        <span></span><span></span><span></span>
       </button>
 
-      <nav id="header-navigation" class="header-navigation" aria-label="Menu główne">
-        <!-- Bez linkowania do czasu utworzenia właściwych podstron -->
-        <span class="nav-placeholder is-current" aria-current="page">Strona główna</span>
-        <span class="nav-placeholder" aria-disabled="true">Marki A-Z</span>
-        <span class="nav-placeholder" aria-disabled="true">Kategorie</span>
-        <span class="nav-placeholder" aria-disabled="true">Serie</span>
-        <span class="nav-placeholder" aria-disabled="true">Modele</span>
-        <span class="nav-placeholder" aria-disabled="true">O projekcie</span>
+      <div class="az-menu-backdrop" data-az-menu-backdrop aria-hidden="true"></div>
 
-        <a class="nav-link nav-link-service" href="https://poradnik.eazbiuro.pl/">
-          Poradnik
-        </a>
-        <a class="nav-link nav-link-service" href="https://wiedza.eazbiuro.pl/">
-          Centrum Wiedzy
-        </a>
-        <a class="nav-link nav-link-contact" href="https://eazbiuro.pl/pl/page/kontakt">
-          Kontakt
-        </a>
-        <a class="nav-link nav-link-shop" href="https://eazbiuro.pl/pl/shop">
-          Przejdź do sklepu
-        </a>
+      <nav class="az-nav" id="az-main-nav" aria-label="Nawigacja główna">
+        <!-- Pozycje bez linków do czasu utworzenia podstron -->
+        <span class="az-nav-item">Marki A-Z</span>
+        <span class="az-nav-item">Kategorie</span>
+        <span class="az-nav-item">Serie i modele</span>
+        <span class="az-nav-item">O projekcie</span>
+
+        <a class="az-nav-service" href="https://poradnik.eazbiuro.pl/">Poradnik</a>
+        <a class="az-nav-service" href="https://wiedza.eazbiuro.pl/">Centrum wiedzy</a>
+        <a href="https://eazbiuro.pl/pl/page/kontakt">Kontakt</a>
+        <a class="az-nav-cta" href="https://eazbiuro.pl/pl/shop">Przejdź do sklepu</a>
       </nav>
     </div>
   </header>
-  <!-- KONIEC WSPÓLNEGO NAGŁÓWKA -->
 
-  <main id="main-content">
+  <main id="main">
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Baza marek A-Z Biuro</span>
+          <span class="eyebrow">Baza producentów A-Z Biuro</span>
 
           <h1>
             Poznaj marki, serie i modele
-            <strong>dostępne w A-Z Biuro</strong>
+            <span>dostępne w A-Z Biuro</span>
           </h1>
 
           <p class="hero-lead">
-            Tworzymy przejrzyste centrum producentów i produktów. W jednym miejscu
-            poznasz specjalizacje marek, najważniejsze serie, różnice między modelami
-            oraz powiązania z poradnikami, wiedzą techniczną i aktualną ofertą sklepu.
+            Uporządkowane centrum producentów i produktów. Poznaj specjalizacje marek,
+            ich najważniejsze serie, różnice między modelami oraz powiązania z poradnikami,
+            wiedzą techniczną i aktualną ofertą sklepu.
           </p>
 
-          <div class="hero-actions" aria-label="Główne działania">
-            <a class="button button-store" href="https://eazbiuro.pl/pl/shop">
-              Zobacz sklep A-Z Biuro
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://eazbiuro.pl/pl/shop">
+              Przejdź do sklepu
             </a>
-            <a class="button button-service" href="https://poradnik.eazbiuro.pl/">
+            <a class="button button-ghost" href="https://poradnik.eazbiuro.pl/">
               Poradnik zakupowy
             </a>
-            <a class="button button-service" href="https://wiedza.eazbiuro.pl/">
+            <a class="button button-ghost" href="https://wiedza.eazbiuro.pl/">
               Centrum Wiedzy
             </a>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="Jak będzie działać serwis">
-          <h2>Od marki do właściwego produktu</h2>
-          <p class="panel-intro">
-            Struktura serwisu prowadzi użytkownika od producenta, przez serię,
-            aż do konkretnego modelu i aktualnej oferty.
-          </p>
+        <aside class="hero-panel" aria-label="Jak działa serwis marek">
+          <h2>Od producenta do właściwego produktu</h2>
+          <p>Serwis prowadzi od marki, przez serię i model, do aktualnej oferty sklepu.</p>
 
-          <ol class="panel-list">
+          <ol class="steps">
             <li>
-              <span class="panel-number">01</span>
+              <span class="step-number">01</span>
               <span>
                 <strong>Poznaj producenta</strong>
                 <small>Specjalizacja, kategorie i najważniejsze linie.</small>
               </span>
             </li>
             <li>
-              <span class="panel-number">02</span>
+              <span class="step-number">02</span>
               <span>
                 <strong>Sprawdź serię lub model</strong>
-                <small>Różnice, zastosowania, warianty i kompatybilność.</small>
+                <small>Warianty, zastosowania, różnice i kompatybilność.</small>
               </span>
             </li>
             <li>
-              <span class="panel-number">03</span>
+              <span class="step-number">03</span>
               <span>
                 <strong>Przejdź do aktualnej oferty</strong>
                 <small>Ceny i dostępność zawsze w sklepie A-Z Biuro.</small>
@@ -1357,104 +1249,77 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="areas-title">
+    <section class="section section-light" id="obszary" aria-labelledby="areas-title">
       <div class="container">
         <div class="section-heading">
-          <span class="section-kicker">Główne obszary</span>
-          <h2 id="areas-title">Znajdź właściwy punkt startowy</h2>
-          <p class="section-intro">
-            Poniższe obszary są przygotowane jako przyszłe wejścia do bazy marek.
-            Okienka nie prowadzą jeszcze do podstron – linkowanie zostanie dodane
-            po opublikowaniu pełnych działów.
+          <div>
+            <span class="eyebrow">Główne obszary</span>
+            <h2 id="areas-title">Wybierz właściwy punkt startowy</h2>
+          </div>
+
+          <p>
+            Okienka pokazują planowaną strukturę serwisu. Pozostają bez linkowania
+            do czasu przygotowania pełnych podstron.
           </p>
         </div>
 
         <div class="card-grid">
           <article class="feature-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M4 5h16M4 12h16M4 19h16" stroke-linecap="round"/>
-                <path d="M7 3v4M12 10v4M17 17v4" stroke-linecap="round"/>
-              </svg>
-            </span>
+            <span class="card-icon">A–Z</span>
             <h3>Marki A-Z</h3>
-            <p>Alfabetyczny indeks producentów ułatwiający szybkie odnalezienie marki i jej najważniejszych grup produktowych.</p>
+            <p>Alfabetyczny indeks producentów wraz z krótką informacją o ich specjalizacji.</p>
             <span class="card-status">W przygotowaniu</span>
           </article>
 
           <article class="feature-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <rect x="3" y="4" width="7" height="7" rx="1.5"/>
-                <rect x="14" y="4" width="7" height="7" rx="1.5"/>
-                <rect x="3" y="15" width="7" height="6" rx="1.5"/>
-                <rect x="14" y="15" width="7" height="6" rx="1.5"/>
-              </svg>
-            </span>
+            <span class="card-icon">01</span>
             <h3>Marki według kategorii</h3>
-            <p>Producenci uporządkowani według zastosowań: biuro, papier, druk, chemia, higiena, BHP, HoReCa i szkoła.</p>
+            <p>Producenci uporządkowani według zastosowań: biuro, papier, druk, chemia, higiena, BHP i HoReCa.</p>
             <span class="card-status">W przygotowaniu</span>
           </article>
 
           <article class="feature-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M5 7.5 12 4l7 3.5v9L12 20l-7-3.5v-9Z"/>
-                <path d="m5 7.5 7 3.5 7-3.5M12 11v9"/>
-              </svg>
-            </span>
+            <span class="card-icon">S</span>
             <h3>Serie produktów</h3>
-            <p>Osobne strony dla rozpoznawalnych linii produktowych, kolekcji i systemów oferowanych przez producentów.</p>
+            <p>Rozpoznawalne linie, kolekcje i systemy produktowe oferowane przez poszczególne marki.</p>
             <span class="card-status">W przygotowaniu</span>
           </article>
 
           <article class="feature-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M7 4h10l2 4-7 12L5 8l2-4Z"/>
-                <path d="M5 8h14M9 4l3 4 3-4"/>
-              </svg>
-            </span>
+            <span class="card-icon">M</span>
             <h3>Wybrane modele</h3>
-            <p>Charakterystyka popularnych modeli, ich wersji, wariantów, funkcji i miejsca w ofercie producenta.</p>
+            <p>Charakterystyka popularnych modeli, ich wersji, wariantów i miejsca w ofercie producenta.</p>
             <span class="card-status">W przygotowaniu</span>
           </article>
 
           <article class="feature-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M4 19h16M6 16V8l6-4 6 4v8" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 16v-4h6v4" stroke-linecap="round"/>
-              </svg>
-            </span>
+            <span class="card-icon">Z</span>
             <h3>Zastosowania produktów</h3>
-            <p>Informacje o tym, do jakich zadań, branż, stanowisk i warunków przeznaczone są produkty konkretnych marek.</p>
+            <p>Informacje o branżach, zadaniach i warunkach, do których przeznaczone są produkty danej marki.</p>
             <span class="card-status">W przygotowaniu</span>
           </article>
 
           <article class="feature-card">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M4 6h16l-1.5 9h-13L4 6Z" stroke-linejoin="round"/>
-                <path d="M8 19h.01M16 19h.01M7 6 6 3H3" stroke-linecap="round"/>
-              </svg>
-            </span>
+            <span class="card-icon">↗</span>
             <h3>Aktualna oferta sklepu</h3>
-            <p>Każda kompletna strona marki, serii lub modelu będzie prowadzić do aktualnej oferty i cen w eazbiuro.pl.</p>
+            <p>Gotowe strony marek, serii i modeli będą prowadzić do cen oraz dostępności w eazbiuro.pl.</p>
             <span class="card-status">Stałe powiązanie</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" aria-labelledby="ecosystem-title">
+    <section class="section" aria-labelledby="ecosystem-title">
       <div class="container">
         <div class="section-heading">
-          <span class="section-kicker">Jeden spójny ekosystem</span>
-          <h2 id="ecosystem-title">Każdy serwis odpowiada na inne pytanie</h2>
-          <p class="section-intro">
+          <div>
+            <span class="eyebrow">Jeden spójny ekosystem</span>
+            <h2 id="ecosystem-title">Każdy serwis odpowiada na inne pytanie</h2>
+          </div>
+
+          <p>
             Rozdzielenie funkcji między cztery serwisy porządkuje drogę użytkownika
-            i zapobiega powielaniu tych samych treści.
+            i ogranicza powielanie tych samych treści.
           </p>
         </div>
 
@@ -1473,8 +1338,8 @@
 
           <article class="ecosystem-card is-active">
             <span class="ecosystem-step">03</span>
-            <h3>Marki A-Z Biuro</h3>
-            <p>Prezentuje producentów, serie, modele i ich najważniejsze różnice.</p>
+            <h3>Producenci, serie i modele</h3>
+            <p>Prezentuje marki, linie produktowe, modele oraz ich najważniejsze różnice.</p>
           </article>
 
           <article class="ecosystem-card">
@@ -1485,13 +1350,17 @@
         </div>
       </div>
     </section>
-    <section class="business-section" aria-labelledby="business-title">
-      <div class="container">
-        <div class="business-panel">
-          <div class="business-copy">
-            <span class="business-kicker">Dla firm i instytucji</span>
 
-            <h2 id="business-title">Poznaj marki i planuj zakupy w jednym miejscu</h2>
+    <!-- MODUŁ PRZED STOPKĄ – WSPÓLNY WZÓR -->
+    <section class="store-cta" aria-labelledby="company-title">
+      <div class="container">
+        <div class="store-cta-inner">
+          <div class="store-cta-icon" aria-hidden="true">A–Z</div>
+
+          <div class="store-cta-copy">
+            <span class="eyebrow">Dla firm i instytucji</span>
+
+            <h2 id="company-title">Poznaj marki i planuj zakupy w jednym miejscu</h2>
 
             <p>
               Połącz informacje o producentach, seriach i modelach z poradnikami,
@@ -1499,142 +1368,146 @@
               dobieraj właściwe produkty i ogranicz przypadkowe zakupy.
             </p>
 
-            <div class="business-actions">
-              <a class="button button-store" href="https://eazbiuro.pl/pl/shop">
-                Zobacz cały sklep
-              </a>
-
-              <a class="button button-contact" href="https://eazbiuro.pl/pl/page/kontakt">
-                Skontaktuj się
-              </a>
-            </div>
+            <ul class="store-cta-topics">
+              <li>marki do biura i dokumentów</li>
+              <li>marki żywności i zaplecza</li>
+              <li>marki higieny i BHP</li>
+              <li>marki dla gastronomii, szkoły i reklamy</li>
+            </ul>
           </div>
 
-          <ul class="business-topics" aria-label="Główne obszary marek">
-            <li>marki do biura i dokumentów</li>
-            <li>marki żywności i zaplecza</li>
-            <li>marki higieny i BHP</li>
-            <li>marki dla gastronomii, szkoły i reklamy</li>
-          </ul>
+          <div class="store-cta-actions">
+            <a class="button button-white" href="https://eazbiuro.pl/pl/shop">
+              Zobacz cały sklep
+            </a>
+            <a class="button button-white-outline" href="https://eazbiuro.pl/pl/page/kontakt">
+              Skontaktuj się
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ==============================
-       START WSPÓLNEJ STOPKI
-       Ten blok należy powtarzać na kolejnych podstronach.
-       ============================== -->
-  <footer class="site-footer">
-    <div class="footer-main">
-      <div class="container">
-        <p class="footer-intro">
-          Praktyczna baza producentów, serii i modeli dostępnych w A-Z Biuro.
-          Informacje o cenach i dostępności zawsze sprawdzaj w aktualnej ofercie sklepu.
+  <!-- WSPÓLNA JASNA STOPKA DLA WSZYSTKICH KOLEJNYCH STRON -->
+  <footer class="footer az-footer">
+    <div class="container az-footer-grid">
+      <div class="az-footer-brand">
+        <a class="az-footer-logo-link" href="/" aria-label="Producenci, serie i modele A-Z Biuro — strona główna">
+          <img
+            class="az-footer-logo"
+            src="https://poradnik.eazbiuro.pl/assets/logo-eazbiuro.png"
+            alt="A-Z Biuro"
+            width="250"
+            height="68"
+            loading="lazy"
+            decoding="async"
+          >
+        </a>
+
+        <p>
+          Praktyczna baza producentów, serii i modeli produktów dla firm,
+          szkół, instytucji, gastronomii i klientów indywidualnych.
         </p>
+      </div>
 
-        <div class="footer-grid">
-          <section class="footer-column footer-brand-column" aria-labelledby="footer-brand-title">
-            <div class="footer-brand-lockup">
-              <img
-                class="footer-logo"
-                src="https://eazbiuro.pl/assets/upload/system/c36a4fb3-8787-4606-b122-ba77db2aeb98.png"
-                alt="A-Z Biuro"
-                width="145"
-                height="49"
-                loading="lazy"
-              >
+      <div class="az-footer-column">
+        <h2>Producenci i marki</h2>
+        <span class="footer-placeholder">Marki A-Z</span>
+        <span class="footer-placeholder">Kategorie marek</span>
+        <span class="footer-placeholder">Serie produktów</span>
+        <span class="footer-placeholder">Wybrane modele</span>
+        <span class="footer-placeholder">O projekcie</span>
+      </div>
 
-              <span id="footer-brand-title" class="footer-brand-name">
-                PRODUCENCI • SERIE • MODELE
-              </span>
-            </div>
+      <div class="az-footer-column">
+        <h2>Serwisy A-Z Biuro</h2>
+        <a href="https://eazbiuro.pl/pl/shop">Sklep internetowy</a>
+        <a href="https://poradnik.eazbiuro.pl/">Poradnik zakupowy</a>
+        <a href="https://wiedza.eazbiuro.pl/">Centrum Wiedzy</a>
+      </div>
 
-            <ul class="footer-list footer-main-list">
-              <li><span class="footer-placeholder">Strona główna</span></li>
-              <li><span class="footer-placeholder">Marki A-Z</span></li>
-              <li><span class="footer-placeholder">Kategorie</span></li>
-              <li><span class="footer-placeholder">Serie produktów</span></li>
-              <li><span class="footer-placeholder">Wybrane modele</span></li>
-              <li><span class="footer-placeholder">O projekcie</span></li>
-            </ul>
-          </section>
-
-          <section class="footer-column" aria-labelledby="footer-services">
-            <h2 id="footer-services">Serwisy A-Z Biuro</h2>
-
-            <ul class="footer-list">
-              <li>
-                <a class="footer-link" href="https://eazbiuro.pl/pl/shop">
-                  Sklep internetowy
-                </a>
-              </li>
-              <li>
-                <a class="footer-link" href="https://poradnik.eazbiuro.pl/">
-                  Poradnik zakupowy
-                </a>
-              </li>
-              <li>
-                <a class="footer-link" href="https://wiedza.eazbiuro.pl/">
-                  Centrum Wiedzy
-                </a>
-              </li>
-            </ul>
-          </section>
-
-          <section class="footer-column" aria-labelledby="footer-customer">
-            <h2 id="footer-customer">Obsługa klienta</h2>
-
-            <ul class="footer-list">
-              <li>
-                <a class="footer-link" href="https://eazbiuro.pl/pl/page/kontakt">
-                  Kontakt
-                </a>
-              </li>
-              <li>
-                <a class="footer-link" href="https://eazbiuro.pl/pl/page/faq">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a class="footer-link" href="https://eazbiuro.pl/pl/page/zwroty-i-reklamacje">
-                  Zwroty i reklamacje
-                </a>
-              </li>
-            </ul>
-          </section>
-        </div>
-
-        <p class="footer-note">
-          Serwis marek jest częścią ekosystemu A-Z Biuro. Opisuje producentów,
-          serie i modele, natomiast aktualne produkty, ceny i dostępność znajdują się w sklepie.
-        </p>
+      <div class="az-footer-column">
+        <h2>Obsługa klienta</h2>
+        <a href="https://eazbiuro.pl/pl/page/kontakt">Kontakt</a>
+        <a href="https://eazbiuro.pl/pl/page/faq">FAQ</a>
+        <a href="https://eazbiuro.pl/pl/page/zwroty-i-reklamacje">Zwroty i reklamacje</a>
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <p>© 2026 A-Z Biuro. Wszystkie prawa zastrzeżone.</p>
-        <p>
-          <span class="footer-domain">marki.eazbiuro.pl</span>
-          — producenci, serie i modele
-        </p>
-      </div>
+    <div class="container az-footer-disclaimer" role="note">
+      <strong>Serwis producentów, serii i modeli jest częścią A-Z Biuro.</strong>
+      Informacje produktowe, ceny i dostępność zawsze sprawdzaj w
+      <a href="https://eazbiuro.pl/pl/shop">aktualnej ofercie sklepu</a>.
+    </div>
+
+    <div class="container az-footer-bottom">
+      <span>© <span data-year>2026</span> A-Z Biuro</span>
+      <span>marki.eazbiuro.pl — producenci, serie i modele</span>
     </div>
   </footer>
-  <!-- KONIEC WSPÓLNEJ STOPKI -->
 
   <script>
     (function () {
-      const toggle = document.querySelector(".menu-toggle");
-      const navigation = document.querySelector(".header-navigation");
+      var header = document.querySelector(".az-header");
+      var button = document.querySelector(".az-nav-toggle");
+      var nav = document.getElementById("az-main-nav");
+      var backdrop = document.querySelector("[data-az-menu-backdrop]");
 
-      if (!toggle || !navigation) return;
+      function closeMenu() {
+        if (!button || !nav) return;
+        button.setAttribute("aria-expanded", "false");
+        nav.classList.remove("is-open");
+        if (backdrop) {
+          backdrop.classList.remove("is-open");
+          backdrop.setAttribute("aria-hidden", "true");
+        }
+        document.body.classList.remove("az-menu-open");
+      }
 
-      toggle.addEventListener("click", function () {
-        const isOpen = navigation.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", String(isOpen));
-        toggle.setAttribute("aria-label", isOpen ? "Zamknij menu" : "Otwórz menu");
+      if (header && button && nav) {
+        button.addEventListener("click", function () {
+          var isOpen = button.getAttribute("aria-expanded") === "true";
+
+          if (isOpen) {
+            closeMenu();
+            return;
+          }
+
+          button.setAttribute("aria-expanded", "true");
+          nav.classList.add("is-open");
+
+          if (backdrop) {
+            backdrop.classList.add("is-open");
+            backdrop.setAttribute("aria-hidden", "false");
+          }
+
+          document.body.classList.add("az-menu-open");
+        });
+
+        if (backdrop) {
+          backdrop.addEventListener("click", closeMenu);
+        }
+
+        nav.addEventListener("click", function (event) {
+          if (event.target.closest("a")) closeMenu();
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape") closeMenu();
+        });
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 1100) closeMenu();
+        });
+
+        window.addEventListener("scroll", function () {
+          header.classList.toggle("is-scrolled", window.scrollY > 8);
+        }, { passive: true });
+      }
+
+      document.querySelectorAll("[data-year]").forEach(function (node) {
+        node.textContent = String(new Date().getFullYear());
       });
     }());
   </script>
