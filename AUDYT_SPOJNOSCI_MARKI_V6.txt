@@ -1,0 +1,66 @@
+AUDYT SPÓJNOŚCI — MARKI.EAZBIURO.PL — WERSJA V6
+=============================================================
+
+Wynik kontroli: 35/35 testów zaliczonych
+
+NAJWAŻNIEJSZE POTWIERDZONE ELEMENTY
+- Przy logo znajduje się wyłącznie: PRODUCENCI • SERIE • MODELE.
+- Przy logo nie ma napisu „Marki A-Z Biuro”.
+- Logo jest klikalne i prowadzi do strony głównej.
+- W menu nie ma osobnej pozycji „Strona główna”.
+- Napis przy logo: Open Sans, 22 px, grubość 400 na dużym ekranie.
+- Nagłówek: 120 px wysokości treści oraz obramowanie.
+- Logo nagłówka: 252 px na dużym ekranie.
+- Sekcja „Dla firm i instytucji” nie ma czerwonego tła.
+- Sekcja firmowa ma granatowe tło i nie zawiera ikony/kwadratu „A–Z”.
+- Przyciski: „Zobacz cały sklep” i „Skontaktuj się”.
+- Stopka ma białe tło, czerwony pasek 4 px oraz białe pole logo.
+- Logo w stopce ma szerokość 250 px.
+- Stopka nie zawiera dodatkowego napisu obok logo.
+- Zachowano noindex, nofollow.
+- Brak zduplikowanych identyfikatorów HTML.
+- Brak poziomego przepełnienia na desktopie, laptopie i telefonie.
+
+KONTROLA RESPONSYWNOŚCI
+- Desktop 2048 px: przepełnienie = False
+- Standard 1440 px: przepełnienie = False
+- Telefon 390 px: przepełnienie = False
+
+PEŁNA LISTA TESTÓW
+[OK] Nagłówek istnieje
+[OK] Logo w nagłówku prowadzi do strony głównej
+[OK] Przy logo jest wyłącznie wymagany napis
+[OK] Brak „Marki A-Z Biuro” obok logo
+[OK] Brak pozycji „Strona główna” w menu
+[OK] Open Sans jest czcionką globalną
+[OK] Moduł dla firm istnieje
+[OK] Moduł bez ikony A–Z
+[OK] Panel modułu nie ma czerwonego tła
+[OK] Tekst CTA: Dla firm i instytucji
+[OK] Tekst CTA: Jedno miejsce do planowania zakupów
+[OK] Tekst CTA: Połącz informacje o producentach, seriach 
+[OK] Tekst CTA: Zobacz cały sklep
+[OK] Tekst CTA: Skontaktuj się
+[OK] Tekst CTA: biuro i dokumenty
+[OK] Tekst CTA: żywność i zaplecze
+[OK] Tekst CTA: higiena i BHP
+[OK] Tekst CTA: gastronomia, szkoła i reklama
+[OK] Stopka istnieje
+[OK] W stopce jest tylko logo bez dopisku obok
+[OK] Stopka ma jasne/białe tło
+[OK] Pole logo w stopce jest białe
+[OK] Tymczasowy noindex/no-follow pozostaje
+[OK] Brak zduplikowanych identyfikatorów HTML
+[OK] Wszystkie odnośniki mają prawidłowy format
+[OK] Brak poziomego przepełnienia — desktop
+[OK] Brak poziomego przepełnienia — standard
+[OK] Brak poziomego przepełnienia — mobile
+[OK] Nagłówek desktop ma 120 px treści + 2 px obramowania
+[OK] Logo desktop ma szerokość 252 px
+[OK] Opis przy logo: Open Sans 22 px, regular
+[OK] Moduł dla firm jest granatowy, a nie czerwony
+[OK] Stopka ma czyste białe tło
+[OK] Stopka ma czerwony pasek 4 px
+[OK] Logo stopki ma wzorcową szerokość 250 px
+
+SHA-256 index.html: 0301fc168a6581d376d6f95c71adee27f7a8b5a4c8130193e906c14a8d612fed
