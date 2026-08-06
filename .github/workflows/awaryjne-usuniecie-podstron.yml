@@ -1,0 +1,167 @@
+name: Awaryjne usunięcie wygenerowanych podstron
+
+on:
+  workflow_dispatch:
+    inputs:
+      potwierdzenie:
+        description: 'Wpisz dokładnie USUN_PODSTRONY'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: ${{ github.event.inputs.potwierdzenie == 'USUN_PODSTRONY' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Kontrola bezpieczeństwa strony głównej
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          ACTUAL_HASH="$(sha256sum index.html | awk '{print $1}')"
+          EXPECTED_HASH="1bbe54d930c4060c0dc053efd51b520e6b3abb9bf4640887fded9ef9c739c195"
+          if [ "$ACTUAL_HASH" != "$EXPECTED_HASH" ]; then
+            echo "STOP: index.html nie jest potwierdzoną poprawną wersją."
+            echo "Aktualny SHA-256: $ACTUAL_HASH"
+            echo "Oczekiwany SHA-256: $EXPECTED_HASH"
+            exit 1
+          fi
+
+      - name: Usuń wyłącznie pliki wygenerowane przez błędne paczki
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          paths=(
+            "3m"
+            "a-z-biuro"
+            "adler"
+            "aha"
+            "ajax"
+            "aku-sp-z-o-o"
+            "amex"
+            "amos"
+            "anna-zaradna"
+            "aqua-polonia"
+            "argo"
+            "ariel"
+            "assets"
+            "astra"
+            "barbara"
+            "bhp"
+            "bi-office"
+            "bic"
+            "bigo"
+            "biurfol"
+            "black-point"
+            "bref"
+            "brennenstuhl"
+            "brewis"
+            "brita"
+            "bros"
+            "brother"
+            "canson"
+            "carioca"
+            "cashmir"
+            "cif"
+            "cillit"
+            "cirrus"
+            "cisowianka"
+            "clin"
+            "clinex"
+            "coca-cola"
+            "color-copy"
+            "cricco"
+            "cztery-pory-roku"
+            "deli"
+            "derwent"
+            "diplomat"
+            "domestos-profess"
+            "donau"
+            "donau-eco"
+            "donau-expert"
+            "donau-home"
+            "donau-professional"
+            "donau-safety"
+            "donau-tech"
+            "donau-travel"
+            "duracell"
+            "dymo"
+            "eagle"
+            "eco-shine"
+            "edding"
+            "ellis"
+            "energizer"
+            "esselte"
+            "faber-castell"
+            "fellowes"
+            "fiorello"
+            "fixi"
+            "floor"
+            "forlux"
+            "kategorie"
+            "kontakt-i-zrodla"
+            "mapa-serwisu"
+            "marki-a-z"
+            "modele"
+            "o-serwisie"
+            "popularne-marki"
+            "producenci"
+            "serie"
+            "404.html"
+            "_headers"
+            "page-manifest.json"
+            "robots.txt"
+            "sitemap.xml"
+          )
+
+          for path in "${paths[@]}"; do
+            if [ -e "$path" ] || [ -L "$path" ]; then
+              rm -rf -- "$path"
+              echo "Usunięto: $path"
+            else
+              echo "Brak, pominięto: $path"
+            fi
+          done
+
+      - name: Sprawdź wynik przed commitem
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f index.html
+          ACTUAL_HASH="$(sha256sum index.html | awk '{print $1}')"
+          test "$ACTUAL_HASH" = "1bbe54d930c4060c0dc053efd51b520e6b3abb9bf4640887fded9ef9c739c195"
+
+          if [ -d 3m ] || [ -e 3m/index.html ]; then
+            echo "STOP: katalog 3m nadal istnieje."
+            exit 1
+          fi
+
+          echo "Strona główna została zachowana."
+          echo "Wygenerowane podstrony zostały usunięte."
+
+      - name: Zapisz usunięcia w GitHubie
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "Nie ma zmian do zapisania."
+            exit 0
+          fi
+
+          git commit -m "Usuń wygenerowane podstrony, pozostaw poprawną stronę główną"
+          git push origin HEAD:main
