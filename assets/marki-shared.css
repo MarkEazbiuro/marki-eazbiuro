@@ -1,0 +1,7 @@
+/* Wspólna warstwa nagłówka i stopki — marki.eazbiuro.pl */
+
+/* Główne tło stopki jak tło pola logo.
+   Ramki oraz belka informacyjna pozostają bez zmian. */
+.az-footer {
+  background: #fff !important;
+}
