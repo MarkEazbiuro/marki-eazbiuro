@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://marki.eazbiuro.pl/sitemap.xml
