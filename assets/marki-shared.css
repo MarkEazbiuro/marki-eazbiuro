@@ -5,3 +5,26 @@
 .az-footer {
   background: #fff !important;
 }
+
+/* Wspólne menu główne — spójne na wszystkich stronach */
+.site-header .main-nav a {
+  text-decoration: none !important;
+}
+
+.site-header .main-nav .nav-item.is-current::after {
+  display: none !important;
+}
+
+.site-header .main-nav .nav-contact {
+  color: #26333f !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
+.site-header .main-nav .nav-contact:hover,
+.site-header .main-nav .nav-contact:focus-visible {
+  color: #cd0000 !important;
+  background: transparent !important;
+  text-decoration: none !important;
+}
+
