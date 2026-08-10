@@ -2140,9 +2140,9 @@
 </button>
 <div aria-hidden="true" class="menu-backdrop" data-menu-backdrop=""></div>
 <nav aria-label="Nawigacja główna" class="main-nav" id="main-nav">
-<a class="nav-item" href="/#marki-a-z">Marki A-Z</a>
-<a class="nav-item" href="/#kategorie">Kategorie</a>
-<a class="nav-item" href="/#serie-i-modele">Serie i modele</a>
+<a class="nav-item" href="/marki-a-z/">Marki A-Z</a>
+<a class="nav-item" href="/kategorie/">Kategorie</a>
+<a class="nav-item" href="/serie-i-modele/">Serie i modele</a>
 <a class="nav-service" href="https://poradnik.eazbiuro.pl/">Poradnik</a>
 <a class="nav-service" href="https://wiedza.eazbiuro.pl/">Centrum wiedzy</a>
 <a href="https://eazbiuro.pl/pl/page/kontakt">Kontakt</a>
@@ -2250,7 +2250,7 @@
 <h2>Marki z ukończoną strukturą</h2>
 <p class="section-intro">Dostępne profile marek prowadzą do ich działów, grup i konkretnych produktów.</p>
 </div>
-<div class="brand-profile-grid"><a class="brand-profile-link" href="/3m/"><strong>3M</strong><span>Profil marki →</span></a><a class="brand-profile-link" href="/adler/"><strong>Adler</strong><span>Profil marki →</span></a></div>
+<div class="brand-profile-grid"><a class="brand-profile-link" href="/3m/"><strong>3M</strong><span>Profil marki →</span></a><a class="brand-profile-link" href="/adler/"><strong>Adler</strong><span>Profil marki →</span></a><a class="brand-profile-link" href="/aha/"><strong>Aha</strong><span>Profil marki →</span></a></div>
 </div>
 </section>
 <section class="brand-profile-section" id="kategorie">
@@ -2260,7 +2260,7 @@
 <h2>Działy produktów</h2>
 <p class="section-intro">Bezpośrednie wejścia do głównych działów opublikowanych marek.</p>
 </div>
-<div class="brand-profile-grid"><a class="brand-profile-link" href="/3m/ergonomia-i-stanowisko-pracy/"><strong>Ergonomia i stanowisko pracy</strong><span>3M →</span></a><a class="brand-profile-link" href="/3m/bhp/"><strong>BHP</strong><span>3M →</span></a><a class="brand-profile-link" href="/3m/pakowanie-i-wysylka/"><strong>Pakowanie i wysyłka</strong><span>3M →</span></a><a class="brand-profile-link" href="/3m/artykuly-biurowe/"><strong>Artykuły biurowe</strong><span>3M →</span></a><a class="brand-profile-link" href="/adler/do-domu/"><strong>Do domu</strong><span>Adler →</span></a><a class="brand-profile-link" href="/adler/urzadzenia-biurowe/"><strong>Urządzenia biurowe</strong><span>Adler →</span></a></div>
+<div class="brand-profile-grid"><a class="brand-profile-link" href="/3m/ergonomia-i-stanowisko-pracy/"><strong>Ergonomia i stanowisko pracy</strong><span>3M →</span></a><a class="brand-profile-link" href="/3m/bhp/"><strong>BHP</strong><span>3M →</span></a><a class="brand-profile-link" href="/3m/pakowanie-i-wysylka/"><strong>Pakowanie i wysyłka</strong><span>3M →</span></a><a class="brand-profile-link" href="/3m/artykuly-biurowe/"><strong>Artykuły biurowe</strong><span>3M →</span></a><a class="brand-profile-link" href="/adler/do-domu/"><strong>Do domu</strong><span>Adler →</span></a><a class="brand-profile-link" href="/adler/urzadzenia-biurowe/"><strong>Urządzenia biurowe</strong><span>Adler →</span></a><a class="brand-profile-link" href="/aha/artykuly-higieniczne/"><strong>Artykuły higieniczne</strong><span>Aha →</span></a><a class="brand-profile-link" href="/aha/artykuly-horeca/"><strong>Artykuły HoReCa</strong><span>Aha →</span></a></div>
 </div>
 </section>
 <section aria-labelledby="areas-title" class="section" id="serie-i-modele">
@@ -2411,10 +2411,10 @@
 </div>
 <div class="az-footer-column">
 <h2>Producenci i marki</h2>
-<a href="/#marki-a-z">Marki A-Z</a>
-<a href="/#kategorie">Kategorie marek</a>
-<a href="/#serie-i-modele">Serie produktów</a>
-<a href="/#serie-i-modele">Wybrane modele</a>
+<a href="/marki-a-z/">Marki A-Z</a>
+<a href="/kategorie/">Kategorie marek</a>
+<a href="/serie-i-modele/">Serie produktów</a>
+<a href="/serie-i-modele/">Wybrane modele</a>
 </div>
 <div class="az-footer-column">
 <h2>Serwisy A-Z Biuro</h2>
@@ -2489,11 +2489,12 @@
       }
 
 
-      const brandRegistry = ["3M", "Adler"];
+      const brandRegistry = ["3M", "Adler", "Aha"];
 
       const publishedBrandUrls = {
         "3M": "/3m/",
-        "Adler": "/adler/"
+        "Adler": "/adler/",
+        "Aha": "/aha/"
       };
 
       function normalizeBrandText(value) {
