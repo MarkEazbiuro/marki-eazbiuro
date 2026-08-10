@@ -428,3 +428,26 @@
 @media (max-width:1100px) {
   .marki-header-slot { min-height: 78px !important; }
 }
+
+/* ============================================================
+   MARKI68 — OCHRONA PROPORCJI ZDJEC PRODUKTOW
+   Nie wymuszamy jednoczesnie szerokosci i wysokosci obrazu.
+   Obraz zawsze zachowuje naturalne proporcje wewnatrz kafelka.
+   ============================================================ */
+.brand-profile .product-window-image img,
+.brand-profile .product-tile-image img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  flex: 0 0 auto !important;
+}
+
+.brand-profile .product-window-image,
+.brand-profile .product-tile-image {
+  overflow: hidden !important;
+}
+
