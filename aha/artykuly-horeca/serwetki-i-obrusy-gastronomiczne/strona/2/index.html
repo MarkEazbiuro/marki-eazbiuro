@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pl">
 <head>
 <meta charset="utf-8"/>
@@ -2267,7 +2268,84 @@
 @media(max-width:980px){.brand-profile .product-window-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:640px){.brand-profile .product-window-grid{grid-template-columns:1fr}.brand-profile .product-window{min-height:390px}.brand-profile .product-window-image{height:220px}}
 </style>
-</head>
+<style data-pagination-fix="aha53">
+/* AHA — paginacja produktów */
+.product-pagination-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.product-range {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  font-weight: 700;
+}
+.product-pagination {
+  margin: 0;
+}
+.product-pagination ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.product-pagination li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.product-pagination a,
+.product-pagination span {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  text-decoration: none;
+}
+.product-pagination a:hover,
+.product-pagination a:focus-visible {
+  color: #fff;
+  background: var(--brand-blue);
+  border-color: var(--brand-blue);
+}
+.product-pagination span[aria-current="page"] {
+  color: #fff;
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+}
+.product-pagination .is-disabled {
+  color: var(--ink-soft);
+  background: var(--surface-soft);
+  opacity: .45;
+  cursor: default;
+}
+.product-pagination .pagination-ellipsis {
+  border-color: transparent;
+  background: transparent;
+}
+@media (max-width: 680px) {
+  .product-pagination-wrap {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+</style></head>
 <body>
 <a class="skip-link" href="#main-content">Przejdź do treści</a>
 <header class="site-header" data-header="">
@@ -2292,15 +2370,13 @@
 </nav>
 </div>
 </header>
-
 <main class="brand-profile" id="main-content">
 <nav aria-label="Okruszki" class="breadcrumbs container"><ol><li><a href="/">Strona główna</a></li><li><a href="/marki-a-z/">Marki A-Z</a></li><li><a href="/aha/">Aha</a></li><li><a href="/aha/artykuly-horeca/">Artykuły HoReCa</a></li><li aria-current="page">Serwetki i obrusy gastronomiczne – strona 2</li></ol></nav>
 <section class="brand-page-hero"><div class="container brand-page-hero-grid"><div><span class="brand-eyebrow">Grupa produktów</span><h1>Serwetki i obrusy gastronomiczne – Aha</h1><p class="brand-page-lead">Serwetki i obrusy gastronomiczne marki Aha.</p></div><div aria-label="Znak marki Aha" class="brand-mark">A</div></div></section>
 <section class="brand-quick"><div class="container brand-quick-grid"><div class="quick-fact"><span>Dział</span><strong>Artykuły HoReCa</strong></div><div class="quick-fact"><span>Grupa</span><strong>Serwetki i obrusy gastronomiczne</strong></div><div class="quick-fact"><span>Produkty</span><strong>31</strong></div><div class="quick-fact"><span>Marka</span><strong>Aha</strong></div></div></section>
-<section class="brand-content"><div class="container brand-layout"><article class="brand-article"><section class="content-section"><h2>Serwetki i obrusy gastronomiczne</h2><div class="product-pagination-wrap"><p class="product-range">Produkty 25–31 z 31</p><nav aria-label="Paginacja produktów" class="product-pagination"><ul><li><a aria-label="Poprzednia strona" href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">‹</a></li><li><a href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">1</a></li><li><span aria-current="page">2</span></li><li><span aria-hidden="true" class="is-disabled">›</span></li></ul></nav></div><ul aria-label="Produkty Aha – Serwetki i obrusy gastronomiczne" class="product-window-grid"><li class="product-window-item"><a class="product-window" href="https://eazbiuro.pl/pl/product/135744,serwetki-afh-aha-2-warstwowe-skladanie-1-4-33x33cm-250-szt-czarne" aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., czarne – Zobacz produkt"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/e74db431-c53c-4772-bbff-56aea476ab4c.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., czarne</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a class="product-window" href="https://eazbiuro.pl/pl/product/135745,serwetki-afh-aha-2-warstwowe-skladanie-1-4-33x33cm-250-szt-granatowe" aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., granatowe – Zobacz produkt"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/2bfff01b-98ec-495c-b896-c2aed26c5b9d.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., granatowe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a class="product-window" href="https://eazbiuro.pl/pl/product/135746,serwetki-afh-aha-2-warstwowe-skladanie-1-4-33x33cm-250-szt-zielone" aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., zielone – Zobacz produkt"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/71a8fb84-3add-4833-9bc4-a63307f372c3.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., zielone</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a class="product-window" href="https://eazbiuro.pl/pl/product/135747,serwetki-afh-aha-2-warstwowe-skladanie-1-4-40x40cm-100-szt-biale" aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe – Zobacz produkt"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/ce809313-48e8-4eba-9546-c1fd0a794268.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a class="product-window" href="https://eazbiuro.pl/pl/product/135748,serwetki-afh-aha-3-warstwowe-skladanie-1-4-40x40cm-100-szt-biale" aria-label="Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe – Zobacz produkt"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/e90479cf-04ed-4251-aaec-3bd5664c0ccb.jpg" loading="lazy" decoding="async"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a class="product-window" href="https://eazbiuro.pl/pl/product/135749,serwetki-afh-aha-3-warstwowe-skladanie-1-4-40x40cm-100-szt-czarne" aria-label="Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., czarne – Zobacz produkt"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/62e7097e-2054-46d4-9929-b814961a5bb8.jpg" loading="lazy" decoding="async"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., czarne</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a class="product-window" href="https://eazbiuro.pl/pl/product/135750,serwetki-afh-aha-2-warstwowe-skladanie-1-8-40x40cm-250-szt-biale" aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/8, 40x40cm, 250 szt., białe – Zobacz produkt"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/226bfde2-2295-4874-a604-3b9619f8ab55.jpg" loading="lazy" decoding="async"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/8, 40x40cm, 250 szt., białe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li></ul><div class="product-pagination-wrap"><p class="product-range">Produkty 25–31 z 31</p><nav aria-label="Paginacja produktów" class="product-pagination"><ul><li><a aria-label="Poprzednia strona" href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">‹</a></li><li><a href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">1</a></li><li><span aria-current="page">2</span></li><li><span aria-hidden="true" class="is-disabled">›</span></li></ul></nav></div></section></article><aside aria-label="Nawigacja Aha" class="brand-sidebar"><section class="side-card"><h2>Artykuły HoReCa</h2><ul><li><a href="/aha/artykuly-horeca/">Artykuły HoReCa</a></li></ul></section><section class="side-card"><h2>Aha</h2><ul><li><a href="/aha/">Profil marki</a></li><li><a href="/marki-a-z/">Marki A-Z</a></li></ul></section></aside></div></section>
+<section class="brand-content"><div class="container brand-layout"><article class="brand-article"><section class="content-section"><h2>Serwetki i obrusy gastronomiczne</h2><div class="product-pagination-wrap"><p class="product-range">Produkty 25–31 z 31</p><nav aria-label="Paginacja produktów" class="product-pagination"><ul><li><a aria-label="Poprzednia strona" href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">‹</a></li><li><a href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">1</a></li><li><span aria-current="page">2</span></li><li><span aria-hidden="true" class="is-disabled">›</span></li></ul></nav></div><ul aria-label="Produkty Aha – Serwetki i obrusy gastronomiczne" class="product-window-grid"><li class="product-window-item"><a aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., czarne – Zobacz produkt" class="product-window" href="https://eazbiuro.pl/pl/product/135744,serwetki-afh-aha-2-warstwowe-skladanie-1-4-33x33cm-250-szt-czarne"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/e74db431-c53c-4772-bbff-56aea476ab4c.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., czarne</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., granatowe – Zobacz produkt" class="product-window" href="https://eazbiuro.pl/pl/product/135745,serwetki-afh-aha-2-warstwowe-skladanie-1-4-33x33cm-250-szt-granatowe"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/2bfff01b-98ec-495c-b896-c2aed26c5b9d.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., granatowe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., zielone – Zobacz produkt" class="product-window" href="https://eazbiuro.pl/pl/product/135746,serwetki-afh-aha-2-warstwowe-skladanie-1-4-33x33cm-250-szt-zielone"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/71a8fb84-3add-4833-9bc4-a63307f372c3.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 33x33cm, 250 szt., zielone</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe – Zobacz produkt" class="product-window" href="https://eazbiuro.pl/pl/product/135747,serwetki-afh-aha-2-warstwowe-skladanie-1-4-40x40cm-100-szt-biale"><span class="product-window-image"><img alt="" src="https://eazbiuro.pl/assets/default/photos/2/ce809313-48e8-4eba-9546-c1fd0a794268.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a aria-label="Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe – Zobacz produkt" class="product-window" href="https://eazbiuro.pl/pl/product/135748,serwetki-afh-aha-3-warstwowe-skladanie-1-4-40x40cm-100-szt-biale"><span class="product-window-image"><img alt="" decoding="async" loading="lazy" src="https://eazbiuro.pl/assets/default/photos/2/e90479cf-04ed-4251-aaec-3bd5664c0ccb.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., białe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a aria-label="Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., czarne – Zobacz produkt" class="product-window" href="https://eazbiuro.pl/pl/product/135749,serwetki-afh-aha-3-warstwowe-skladanie-1-4-40x40cm-100-szt-czarne"><span class="product-window-image"><img alt="" decoding="async" loading="lazy" src="https://eazbiuro.pl/assets/default/photos/2/62e7097e-2054-46d4-9929-b814961a5bb8.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 3-warstwowe, składanie 1/4, 40x40cm, 100 szt., czarne</span><span class="product-window-cta">Zobacz produkt</span></span></a></li><li class="product-window-item"><a aria-label="Serwetki AFH AHA, 2-warstwowe, składanie 1/8, 40x40cm, 250 szt., białe – Zobacz produkt" class="product-window" href="https://eazbiuro.pl/pl/product/135750,serwetki-afh-aha-2-warstwowe-skladanie-1-8-40x40cm-250-szt-biale"><span class="product-window-image"><img alt="" decoding="async" loading="lazy" src="https://eazbiuro.pl/assets/default/photos/2/226bfde2-2295-4874-a604-3b9619f8ab55.jpg"/></span><span class="product-window-body"><span class="product-window-name">Serwetki AFH AHA, 2-warstwowe, składanie 1/8, 40x40cm, 250 szt., białe</span><span class="product-window-cta">Zobacz produkt</span></span></a></li></ul><div class="product-pagination-wrap"><p class="product-range">Produkty 25–31 z 31</p><nav aria-label="Paginacja produktów" class="product-pagination"><ul><li><a aria-label="Poprzednia strona" href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">‹</a></li><li><a href="/aha/artykuly-horeca/serwetki-i-obrusy-gastronomiczne/">1</a></li><li><span aria-current="page">2</span></li><li><span aria-hidden="true" class="is-disabled">›</span></li></ul></nav></div></section></article><aside aria-label="Nawigacja Aha" class="brand-sidebar"><section class="side-card"><h2>Artykuły HoReCa</h2><ul><li><a href="/aha/artykuly-horeca/">Artykuły HoReCa</a></li></ul></section><section class="side-card"><h2>Aha</h2><ul><li><a href="/aha/">Profil marki</a></li><li><a href="/marki-a-z/">Marki A-Z</a></li></ul></section></aside></div></section>
 <nav aria-label="Nawigacja grupy" class="brand-nav"><div class="container brand-nav-inner"><a href="/aha/artykuly-horeca/">← Artykuły HoReCa</a><a href="/aha/">Aha →</a></div></nav>
 </main>
-
 <footer class="az-footer">
 <div class="container az-footer-grid">
 <div class="az-footer-brand">
@@ -2342,7 +2418,6 @@
 <span>marki.eazbiuro.pl — producenci, serie i modele</span>
 </div>
 </footer>
-
 <script>
 (function () {
   const header = document.querySelector('.site-header');
@@ -2393,6 +2468,5 @@
   });
 }());
 </script>
-
 </body>
 </html>
