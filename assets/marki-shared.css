@@ -406,3 +406,25 @@
     width: min(calc(100% - 24px),1240px) !important;
   }
 }
+
+
+/* ============================================================
+   WSPÓLNY LAYOUT ŁADOWANY Z /includes/header.html I footer.html
+   ============================================================ */
+.marki-header-slot {
+  display: block !important;
+  min-height: 120px !important;
+  background: #fff !important;
+  border-top: 1px solid #eef1f3 !important;
+  border-bottom: 1px solid #e1e6ea !important;
+}
+.marki-footer-slot {
+  display: block !important;
+  min-height: 1px !important;
+}
+@media (max-width:1750px) and (min-width:1101px) {
+  .marki-header-slot { min-height: 100px !important; }
+}
+@media (max-width:1100px) {
+  .marki-header-slot { min-height: 78px !important; }
+}
