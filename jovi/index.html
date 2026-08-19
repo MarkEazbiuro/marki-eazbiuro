@@ -4,15 +4,15 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>JOVI – profil marki | A-Z Biuro</title>
-<meta content="Profil marki JOVI w serwisie Marki A-Z Biuro. Strona w budowie: specjalizacja, kategorie, serie i wybrane modele będą uzupełniane po weryfikacji." name="description"/>
-<meta content="noindex,nofollow" name="robots"/>
+<title>JOVI – działy i produkty | Marki A-Z Biuro</title>
+<meta content="Produkty marki JOVI uporządkowane według działów i grup produktów." name="description"/>
+<meta content="noindex,follow" name="robots"/>
 <link href="https://marki.eazbiuro.pl/jovi/" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="pl_PL" property="og:locale"/>
-<meta content="Marki A-Z Biuro" property="og:site_name">
-<meta content="JOVI – profil marki | A-Z Biuro" property="og:title"/>
-<meta content="Profil marki JOVI w serwisie Marki A-Z Biuro. Strona w budowie: specjalizacja, kategorie, serie i wybrane modele będą uzupełniane po weryfikacji." property="og:description"/>
+<meta content="Marki A-Z Biuro" property="og:site_name"/>
+<meta content="JOVI – działy i produkty | Marki A-Z Biuro" property="og:title"/>
+<meta content="Produkty marki JOVI uporządkowane według działów i grup produktów." property="og:description"/>
 <meta content="https://marki.eazbiuro.pl/jovi/" property="og:url"/>
 <meta content="#cd0000" name="theme-color"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -2104,243 +2104,189 @@
 .brand-profile .brand-nav{padding:22px 0 68px}.brand-profile .brand-nav-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}.brand-profile .brand-nav a{display:inline-flex;min-height:44px;align-items:center;padding:9px 15px;border:1px solid #b9d6ed;border-radius:8px;color:var(--bp-blue);font-weight:800;text-decoration:none}.brand-profile .brand-nav a:hover{color:#fff;background:var(--bp-blue);border-color:var(--bp-blue)}
 @media(max-width:980px){.brand-profile .brand-page-hero-grid{grid-template-columns:1fr}.brand-profile .brand-mark{width:110px;height:110px;font-size:48px}.brand-profile .brand-quick-grid{grid-template-columns:repeat(2,1fr)}.brand-profile .brand-layout{grid-template-columns:1fr}.brand-profile .brand-sidebar{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.brand-profile .brand-sidebar .store-card{grid-column:1/-1}}
 @media(max-width:640px){.brand-profile .container{width:min(calc(100% - 28px),1240px)}.brand-profile .brand-page-hero{padding:54px 0 44px}.brand-profile .brand-page-hero-grid{gap:30px}.brand-profile .brand-page-lead{font-size:16px}.brand-profile .brand-quick-grid,.brand-profile .category-grid,.brand-profile .line-grid,.brand-profile .audience-list,.brand-profile .brand-sidebar{grid-template-columns:1fr}.brand-profile .brand-quick-grid{transform:translateY(-14px)}.brand-profile .brand-content{padding-top:34px}.brand-profile .brand-nav-inner{display:grid}.brand-profile .brand-nav a{justify-content:center;text-align:center}}
-</style><style>
+</style>
+<style>
 .brand-profile .build-notice-section{padding:18px 0;background:#fff;border-bottom:1px solid #e5e9ed}
 .brand-profile .build-notice{padding:18px 20px;border:1px solid rgba(205,0,0,.22);border-left:5px solid #cd0000;border-radius:12px;background:#fff7f7}
 .brand-profile .build-notice strong{display:block;margin-bottom:5px;color:#cd0000;font-size:14px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
 .brand-profile .build-notice span{display:block;color:#59636e;font-size:14px;line-height:1.65}
 </style>
-<link href="/assets/marki-shared.css" rel="stylesheet"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"JOVI – profil marki","url":"https://marki.eazbiuro.pl/jovi/","description":"Profil marki JOVI w serwisie Marki A-Z Biuro. Strona w budowie: specjalizacja, kategorie, serie i wybrane modele będą uzupełniane po weryfikacji.","inLanguage":"pl-PL","dateModified":"2026-08-07"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Strona główna","item":"https://marki.eazbiuro.pl/"},{"@type":"ListItem","position":2,"name":"Marki A-Z","item":"https://marki.eazbiuro.pl/marki-a-z/"},{"@type":"ListItem","position":3,"name":"JOVI","item":"https://marki.eazbiuro.pl/jovi/"}]}</script>
-<meta content="0; url=https://marki.eazbiuro.pl/" http-equiv="refresh"/>
-</meta><script defer="True" src="/assets/marki-shell.js"></script></head>
+<style>
+  .brand-mark { font-size: clamp(64px, 9vw, 118px) !important; letter-spacing: -.05em; }
+  .department-grid,
+  .product-grid,
+  .sibling-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .department-card,
+  .product-card,
+  .sibling-card {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+  .department-card,
+  .sibling-card {
+    display: block;
+    padding: 22px;
+    color: inherit;
+    text-decoration: none;
+  }
+  .department-card:hover,
+  .sibling-card:hover {
+    border-color: #c9d1d9;
+    transform: translateY(-1px);
+  }
+  .department-card h3,
+  .sibling-card h3,
+  .product-card h3 {
+    margin: 0 0 8px;
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.35;
+  }
+  .department-card p,
+  .sibling-card p,
+  .product-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .department-card .card-arrow,
+  .sibling-card .card-arrow {
+    display: inline-block;
+    margin-top: 14px;
+    color: var(--brand-blue);
+    font-weight: 800;
+  }
+  .product-card {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+    padding: 18px;
+  }
+  a.product-card {
+    color: inherit;
+    text-decoration: none;
+  }
+  a.product-card:hover {
+    border-color: #c9d1d9;
+    transform: translateY(-1px);
+  }
+  .product-letter {
+    display: flex;
+    width: 52px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 52px;
+    border-radius: 12px;
+    background: #f1f4f7;
+    color: var(--ink);
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .product-meta {
+    display: block;
+    margin-top: 7px;
+    color: var(--ink-soft);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .product-card .go {
+    display: block;
+    margin-top: 10px;
+    color: var(--brand-blue);
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .brand-note {
+    padding: 18px 20px;
+    background: #f8fafc;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--brand-red);
+    border-radius: 12px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .plain-list {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding-left: 22px;
+  }
+  .plain-list li { color: var(--ink-soft); line-height: 1.65; }
+  @media (max-width: 760px) {
+    .department-grid,
+    .product-grid,
+    .sibling-grid { grid-template-columns: 1fr; }
+    .product-card { grid-template-columns: 46px minmax(0, 1fr); }
+    .product-letter { width: 46px; height: 46px; flex-basis: 46px; }
+  }
+</style>
+<style>
+/* 3M: scoped catalog and terminal product-card additions */
+.brand-profile .catalog-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.brand-profile .catalog-card{display:flex;min-height:150px;flex-direction:column;justify-content:space-between;padding:22px;border:1px solid var(--bp-line);border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(25,36,48,.05);color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.brand-profile .catalog-card:hover{transform:translateY(-2px);border-color:#c5d5e4;box-shadow:0 14px 30px rgba(25,36,48,.08)}
+.brand-profile .catalog-card:focus-visible,.brand-profile .product-tile:focus-visible{outline:3px solid var(--bp-blue);outline-offset:3px}
+.brand-profile .catalog-card h3{margin:0 0 10px;font-size:19px;line-height:1.35}
+.brand-profile .catalog-card p{margin:0;color:var(--bp-soft);font-size:14px;line-height:1.6}
+.brand-profile .catalog-card .card-arrow{display:inline-flex;margin-top:18px;color:var(--bp-blue);font-weight:800}
+.brand-profile .product-list-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:24px}
+.brand-profile .product-tile{display:flex;min-width:0;min-height:410px;flex-direction:column;padding:16px;border:1px solid var(--bp-line);border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(25,36,48,.05);color:inherit;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.brand-profile .product-tile:hover{transform:translateY(-2px);border-color:#c5d5e4;box-shadow:0 14px 30px rgba(25,36,48,.09)}
+.brand-profile .product-tile-image{display:flex;height:230px;align-items:center;justify-content:center;padding:8px;margin-bottom:16px;border-radius:10px;background:#fff}
+.brand-profile .product-tile-image img{display:block;width:100%;height:100%;object-fit:contain}
+.brand-profile .product-tile-name{display:block;margin:0;color:var(--bp-ink);font-size:15px;font-weight:700;line-height:1.5;overflow-wrap:normal;word-break:normal;hyphens:none}
+.brand-profile .product-tile-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 15px;margin-top:auto;padding-top:10px;border-radius:8px;background:var(--bp-red);color:#fff;font-size:13px;font-weight:800}
+.brand-profile .product-tile:hover .product-tile-cta{background:var(--bp-red-dark)}
+.brand-profile .terminal-summary{margin-top:10px;color:var(--bp-soft);font-size:14px}
+@media(max-width:980px){.brand-profile .product-list-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.brand-profile .catalog-card-grid,.brand-profile .product-list-grid{grid-template-columns:1fr}.brand-profile .product-tile{min-height:390px}.brand-profile .product-tile-image{height:220px}}
+</style>
+<style id="product-windows-3m-v2">
+/* Terminal product windows: explicit, self-contained presentation */
+.brand-profile .product-window-grid{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.brand-profile .product-window-item{margin:0;padding:0;min-width:0}
+.brand-profile .product-window{height:100%;min-height:420px;display:flex;flex-direction:column;overflow:hidden;border:1px solid #dfe5ea;border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(25,36,48,.08);color:#222831;text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.brand-profile .product-window:hover{transform:translateY(-2px);border-color:#b9cddd;box-shadow:0 14px 34px rgba(25,36,48,.12)}
+.brand-profile .product-window:focus-visible{outline:3px solid #105fa6;outline-offset:3px}
+.brand-profile .product-window-image{height:235px;display:flex;align-items:center;justify-content:center;padding:18px;background:#fff;border-bottom:1px solid #eef1f3}
+.brand-profile .product-window-image img{display:block;width:100%;height:100%;object-fit:contain}
+.brand-profile .product-window-body{display:flex;flex:1;flex-direction:column;padding:18px}
+.brand-profile .product-window-name{display:block;color:#222831;font-size:15px;font-weight:700;line-height:1.5;overflow-wrap:normal;word-break:normal;hyphens:none}
+.brand-profile .product-window-cta{display:flex;align-items:center;justify-content:center;min-height:44px;margin-top:auto;padding:10px 16px;border-radius:8px;background:#cd0000;color:#fff;font-size:13px;font-weight:800;text-align:center}
+.brand-profile .product-window:hover .product-window-cta{background:#aa0000}
+@media(max-width:980px){.brand-profile .product-window-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.brand-profile .product-window-grid{grid-template-columns:1fr}.brand-profile .product-window{min-height:390px}.brand-profile .product-window-image{height:220px}}
+</style>
+<style data-pagination-biurfol="marki85">
+.product-pagination-wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:24px 0}
+.product-range{margin:0;color:var(--ink-soft);font-size:14px;font-weight:700}
+.product-pagination{margin:0}
+.product-pagination ul{display:flex;align-items:center;gap:8px;margin:0;padding:0;list-style:none;flex-wrap:wrap}
+.product-pagination li{margin:0;padding:0;list-style:none}
+.product-pagination a,.product-pagination span{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;box-sizing:border-box;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;font-size:14px;font-weight:800;line-height:1;text-decoration:none}
+.product-pagination a:hover,.product-pagination a:focus-visible{color:#fff;background:var(--brand-blue);border-color:var(--brand-blue)}
+.product-pagination span[aria-current="page"]{color:#fff;background:var(--brand-red);border-color:var(--brand-red)}
+.product-pagination .is-disabled{color:var(--ink-soft);background:var(--surface-soft);opacity:.45;cursor:default}
+@media(max-width:680px){.product-pagination-wrap{align-items:flex-start;flex-direction:column;gap:10px}}
+</style>
+<link href="/assets/marki-shared.css" rel="stylesheet"/>
+<script defer="" src="/assets/marki-shell.js"></script>
+</head>
 <body>
 <a class="skip-link" href="#main-content">Przejdź do treści</a>
-<!-- =========================================================
-       START WSPÓLNEGO NAGŁÓWKA
-       Układ zgodny z Poradnikiem i Centrum Wiedzy.
-       ========================================================= -->
 <div aria-label="Ładowanie nawigacji" class="marki-header-slot" data-shared-header=""></div>
-<!-- KONIEC WSPÓLNEGO NAGŁÓWKA -->
-<main class="brand-profile" id="main-content">
-<nav aria-label="Okruszki" class="breadcrumbs container"><ol><li><a href="/">Strona główna</a></li><li><a href="/marki-a-z/">Marki A-Z</a></li><li aria-current="page">JOVI</li></ol></nav>
-<section aria-label="Status strony" class="build-notice-section"><div class="container"><div class="build-notice"><strong>Strona w budowie</strong><span>Profil marki JOVI został utworzony jako część rozwijanego katalogu marek A-Z Biuro. Szczegółowe informacje będą dodawane po weryfikacji źródeł, aktualnej oferty, marek i produktów.</span></div></div></section>
-<section class="brand-page-hero"><div class="container brand-page-hero-grid"><div><span class="brand-eyebrow">Profil marki</span><h1>JOVI – profil marki w A-Z Biuro</h1><p class="brand-page-lead">Ta strona będzie porządkować informacje dotyczące marki JOVI w kontekście oferty A-Z Biuro. Profil nie jest kartą produktu ani kopią sklepu. Docelowo znajdą się tutaj potwierdzone informacje o specjalizacji marki, najważniejszych grupach produktowych, nazwanych seriach, wybranych modelach oraz powiązaniach z poradnikiem, Centrum Wiedzy i aktualną ofertą sklepu.</p></div><div aria-label="Znak tekstowy JOVI" class="brand-mark">JOVI</div></div></section>
-<section aria-label="Najważniejsze informacje o statusie profilu" class="brand-quick"><div class="container brand-quick-grid"><div class="quick-fact"><span>Status</span><strong>profil w budowie</strong></div><div class="quick-fact"><span>Źródło rejestru</span><strong>Marki dostawcy.xlsx</strong></div><div class="quick-fact"><span>Kolejny etap</span><strong>weryfikacja kategorii i serii</strong></div><div class="quick-fact"><span>Zakupy</span><strong>aktualne dane pozostają w eazbiuro.pl</strong></div></div></section>
-<section class="brand-content"><div class="container brand-layout"><article class="brand-article">
-<section aria-labelledby="plan-jovi" class="content-section"><h2 id="plan-jovi">Co będzie zawierał profil marki JOVI</h2><p>Profil zostanie rozwinięty dopiero po sprawdzeniu danych i wiarygodnych źródeł. Nie przypisujemy marce cech, certyfikatów, kraju pochodzenia, technologii ani zastosowań bez potwierdzenia.</p><div class="category-grid">
-<article class="info-card"><h3>Specjalizacja marki</h3><p>Zweryfikowany opis działalności marki w obszarach istotnych dla klientów A-Z Biuro.</p></article>
-<article class="info-card"><h3>Kategorie produktów</h3><p>Logiczne grupy produktowe obecne w aktualnej ofercie, bez kopiowania opisów sklepowych.</p></article>
-<article class="info-card"><h3>Powiązania</h3><p>Linki do właściwych poradników, pojęć w Centrum Wiedzy i aktualnej oferty sklepu.</p></article>
-</div></section>
-<section aria-labelledby="status-jovi" class="content-section"><h2 id="status-jovi">Status opracowania</h2><p>Strona została utworzona na etapie budowy struktury serwisu i linkowania wewnętrznego. Do czasu zakończenia weryfikacji pozostaje oznaczona jako strona w budowie i nie jest przeznaczona do indeksowania w wyszukiwarkach.</p></section>
-<section aria-labelledby="sources-jovi" class="content-section"><h2 id="sources-jovi">Źródło wpisu</h2><ol class="source-list"><li>Rejestr marek A-Z Biuro: „Marki dostawcy.xlsx”, Arkusz1, wiersz 80 — nazwa „JOVI”.</li></ol><div class="editorial-box"><strong>Opracowanie:</strong> A-Z Biuro. Szczegółowe dane o marce zostaną opublikowane dopiero po ich weryfikacji.</div></section>
-</article><aside aria-label="Dalsze kroki" class="brand-sidebar"><section class="side-card store-card"><h2>Aktualna oferta A-Z Biuro</h2><p>Ceny, dostępność, warianty i informacje handlowe znajdują się w sklepie.</p><a class="store-button" href="https://eazbiuro.pl/pl/shop">Przejdź do sklepu A-Z Biuro</a></section><section class="side-card"><h2>Powiązane serwisy</h2><ul><li><a href="https://poradnik.eazbiuro.pl/">Poradnik A-Z Biuro</a></li><li><a href="https://wiedza.eazbiuro.pl/">Centrum Wiedzy A-Z Biuro</a></li><li><a href="/marki-a-z/">Wróć do indeksu marek</a></li></ul></section><section class="side-card notice-card"><h2>Ważna informacja</h2><p><strong>Profil jest w budowie.</strong> Nie należy traktować obecnej treści jako kompletnego opisu portfolio marki.</p></section></aside></div></section>
-<nav aria-label="Nawigacja między stronami" class="brand-nav"><div class="container brand-nav-inner"><a href="/marki-a-z/">← Marki A-Z</a><a href="https://eazbiuro.pl/pl/shop">Przejdź do sklepu →</a></div></nav>
-</main>
-<!-- =========================================================
-       START WSPÓLNEJ JASNEJ STOPKI
-       Układ zgodny z Poradnikiem i Centrum Wiedzy.
-       ========================================================= -->
+<main class="brand-profile" id="main-content"><nav aria-label="Okruszki" class="breadcrumbs container"><ol><li><a href="/">Strona główna</a></li><li><a href="/marki-a-z/">Marki A-Z</a></li><li aria-current="page">JOVI</li></ol></nav><section class="brand-page-hero"><div class="container brand-page-hero-grid"><div><span class="brand-eyebrow">Marka</span><h1>JOVI – działy i produkty</h1><p class="brand-page-lead">Produkty marki JOVI są uporządkowane według działów i grup produktów.</p></div><div aria-label="Znak marki JOVI" class="brand-mark">J</div></div></section><section class="brand-quick"><div class="container brand-quick-grid"><div class="quick-fact"><span>Działy</span><strong>2</strong></div><div class="quick-fact"><span>Grupy</span><strong>11</strong></div><div class="quick-fact"><span>Produkty</span><strong>91</strong></div><div class="quick-fact"><span>Marka</span><strong>JOVI</strong></div></div></section><section class="brand-content"><div class="container brand-layout"><article class="brand-article"><section class="content-section"><h2>Działy produktów JOVI</h2><div class="catalog-card-grid"><a class="catalog-card" href="/jovi/artykuly-szkolne/"><div><h3>Artykuły szkolne</h3><p>5 grup • 42 produkty</p></div><span class="card-arrow">Artykuły szkolne →</span></a><a class="catalog-card" href="/jovi/artykuly-kreatywne/"><div><h3>Artykuły kreatywne</h3><p>6 grup • 49 produktów</p></div><span class="card-arrow">Artykuły kreatywne →</span></a></div></section></article><aside aria-label="Nawigacja JOVI" class="brand-sidebar"><section class="side-card"><h2>Działy JOVI</h2><ul><li><a href="/jovi/artykuly-szkolne/">Artykuły szkolne</a></li><li><a href="/jovi/artykuly-kreatywne/">Artykuły kreatywne</a></li></ul></section><section class="side-card"><h2>JOVI</h2><ul><li><a href="/jovi/">Profil marki</a></li><li><a href="/marki-a-z/">Marki A-Z</a></li><li><a href="/">Strona główna</a></li></ul></section></aside></div></section><nav aria-label="Nawigacja marki JOVI" class="brand-nav"><div class="container brand-nav-inner"><a href="/marki-a-z/">← Marki A-Z</a><a href="/kategorie/">Kategorie →</a></div></nav></main>
 <div class="marki-footer-slot" data-shared-footer=""></div>
-<!-- KONIEC WSPÓLNEJ JASNEJ STOPKI -->
-<script>
-    (function () {
-      const header = document.querySelector('[data-header]');
-      const button = document.querySelector('.nav-toggle');
-      const navigation = document.getElementById('main-nav');
-      const backdrop = document.querySelector('[data-menu-backdrop]');
-
-      function closeMenu() {
-        if (!button || !navigation) return;
-        button.setAttribute('aria-expanded', 'false');
-        navigation.classList.remove('is-open');
-        if (backdrop) {
-          backdrop.classList.remove('is-open');
-          backdrop.setAttribute('aria-hidden', 'true');
-        }
-        document.body.classList.remove('menu-open');
-      }
-
-      if (button && navigation) {
-        button.addEventListener('click', function () {
-          const isOpen = button.getAttribute('aria-expanded') === 'true';
-          if (isOpen) {
-            closeMenu();
-            return;
-          }
-          button.setAttribute('aria-expanded', 'true');
-          navigation.classList.add('is-open');
-          if (backdrop) {
-            backdrop.classList.add('is-open');
-            backdrop.setAttribute('aria-hidden', 'false');
-          }
-          document.body.classList.add('menu-open');
-        });
-        if (backdrop) backdrop.addEventListener('click', closeMenu);
-        document.addEventListener('keydown', function (event) {
-          if (event.key === 'Escape') closeMenu();
-        });
-        window.addEventListener('resize', function () {
-          if (window.innerWidth > 1100) closeMenu();
-        });
-      }
-
-      if (header) {
-        window.addEventListener('scroll', function () {
-          header.classList.toggle('is-scrolled', window.scrollY > 8);
-        }, { passive: true });
-      }
-
-
-      const brandRegistry = ["3M", "Adler", "Aha", "Ajax", "Aku Sp.z o.o", "Amex", "Amos", "Anna Zaradna", "Aqua Polonia", "Argo", "Ariel", "Astra", "A-Z Biuro", "Barbara", "Bhp", "Bic", "Bigo", "Bi-Office", "Biurfol", "Black Point", "Bref", "Brennenstuhl", "Brewis", "Brita", "Bros", "Brother", "Canson", "Carioca", "Cashmir", "Cif", "Cillit", "Cirrus", "Cisowianka", "Clin", "Clinex", "Coca-Cola", "Color Copy", "Cricco", "Cztery Pory Roku", "Deli", "Derwent", "Diplomat", "Domestos Profess", "Donau", "Donau Eco", "DONAU EXPERT", "Donau Home", "Donau Professional", "Donau Safety", "Donau Tech", "DONAU TRAVEL", "Duracell", "Dymo", "Eagle", "Eco Shine", "Edding", "Ellis", "Energizer", "Esselte", "Faber-Castell", "Fellowes", "Fiorello", "Fixi", "Floor", "Forlux", "Galeria Papieru", "Gimboo", "Gostyń", "Grosik", "Han", "Happy Color", "Herbapol", "Herlitz", "Hero", "Hp", "Inka", "Jacobs", "Jan Niezbedny", "Jetworld", "JOVI", "Kamix", "Kangaro", "Kensington", "Kobra", "Kodak", "Kret", "Kropla Beskidu", "Kubuś", "Kuchcik", "Kuracjusz", "Kw Trade", "Kyocera", "L-Biotica", "Leitz", "Lenor", "Lexmark", "LUKSELL", "Luksja", "Luna", "Łowicz", "Maxwell House", "Meglio", "Memobe", "Memobe Idea", "Memoboards", "Michalczyk I Pro", "MK CAFE", "Mleczarnia", "Mlekovita", "MOKATE", "Moleskine", "Mr. Proper", "Muszynianka", "My Office", "NAŁĘCZÓW ZDRÓJ", "Nanomax", "Navigator", "Nc Koperty", "Nebulo", "Nescafe", "Nestea", "Nestle", "Nexxt", "Nivea", "Nobo", "Noris", "Nowy_Styl", "Nusign", "OH!", "Oh Green", "Oki", "Olivetti", "Opus", "Oval", "Oxford", "Palmolive", "Panta Plast", "Paper_Mate", "PARTY GO", "Pattex", "Penac", "Pentel", "Penword", "Pilot", "Platinet", "Platinum", "PLUM", "Pol", "Polski Cukier", "POSCA", "Post-It", "Prince Polo", "Pur", "Q-Connect", "Regina", "Rexel", "Rey", "Ricoh", "Rotring", "Saga", "Samsung", "Sax", "Schneider", "Scotch", "Scotch Brite", "SCOTT", "Sharp", "Sharpie", "Sheaffer", "Sidolux", "Sprite", "Stabilo", "Staedtler", "Steinbeis", "Stella", "Tak!", "Tchibo", "TENZI", "Tesa", "Tetis", "Tetley", "Tipp-Ex", "Toma", "Top_2000", "Tork", "Toshiba", "Trodat", "TROIKA", "Tymbark", "Typograf", "Uni", "Unicoffee", "Utax", "Velvet", "Velvet Care", "Verbatim", "Wallner", "Wawel", "Wenger", "Woseba", "WYPALL", "Xerox", "Yanda", "Yellow One", "Zenith", "Żywiec Zdrój"];
-
-      const publishedBrandUrls = {
-        "3M": "/3m/",
-        "Brother": "/brother/",
-        "Donau": "/donau/",
-        "Esselte": "/esselte/",
-        "Faber-Castell": "/faber-castell/",
-        "Fellowes": "/fellowes/",
-        "Leitz": "/leitz/",
-        "Navigator": "/navigator/",
-        "Pentel": "/pentel/",
-        "TENZI": "/tenzi/"
-      };
-
-      function normalizeBrandText(value) {
-        return String(value || "")
-          .trim()
-          .toLocaleLowerCase("pl-PL")
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "")
-          .replace(/ł/g, "l")
-          .replace(/[^a-z0-9]+/g, " ");
-      }
-
-      const searchForm = document.querySelector("[data-brand-search]");
-      const searchInput = document.getElementById("brand-search-input");
-      const searchResults = document.getElementById("brand-search-results");
-
-      function renderSearchResults(query) {
-        if (!searchResults) return;
-        const normalizedQuery = normalizeBrandText(query);
-        if (!normalizedQuery) {
-          searchResults.hidden = true;
-          searchResults.innerHTML = "";
-          return;
-        }
-
-        const matches = brandRegistry
-          .filter(function (brand) {
-            return normalizeBrandText(brand).includes(normalizedQuery);
-          })
-          .slice(0, 12);
-
-        if (!matches.length) {
-          searchResults.hidden = false;
-          searchResults.innerHTML =
-            '<p class="brand-search-summary">Brak takiej nazwy w rejestrze marek A-Z Biuro.</p>';
-          return;
-        }
-
-        const matchHtml = matches.map(function (brand) {
-          const safe = brand.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-          const url = publishedBrandUrls[brand];
-          if (url) {
-            return '<a class="brand-search-match" href="' + url + '"><span>' +
-              safe + '</span><small>profil w budowie →</small></a>';
-          }
-          return '<div class="brand-search-match"><span>' +
-            safe + '</span><small>w rejestrze</small></div>';
-        }).join("");
-
-        searchResults.hidden = false;
-        searchResults.innerHTML =
-          '<p class="brand-search-summary">Znaleziono ' + matches.length +
-          (matches.length === 12 ? ' pierwszych pasujących pozycji.' : ' pasujących pozycji.') +
-          '</p><div class="brand-search-matches">' + matchHtml + '</div>';
-      }
-
-      if (searchForm && searchInput) {
-        searchForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          renderSearchResults(searchInput.value);
-        });
-
-        searchInput.addEventListener("input", function () {
-          if (searchInput.value.trim().length >= 2) {
-            renderSearchResults(searchInput.value);
-          } else if (searchResults) {
-            searchResults.hidden = true;
-            searchResults.innerHTML = "";
-          }
-        });
-
-        document.querySelectorAll("[data-search-example]").forEach(function (button) {
-          button.addEventListener("click", function () {
-            searchInput.value = button.getAttribute("data-search-example") || "";
-            renderSearchResults(searchInput.value);
-            searchInput.focus();
-          });
-        });
-      }
-
-      const indexGrid = document.querySelector("[data-brand-index-grid]");
-      const indexTitle = document.querySelector("[data-brand-index-title]");
-      const indexCount = document.querySelector("[data-brand-index-count]");
-      const letterButtons = document.querySelectorAll("[data-brand-letter]");
-
-      function brandInitial(brand) {
-        const first = normalizeBrandText(brand).charAt(0);
-        return first ? first.toUpperCase() : "";
-      }
-
-      function renderBrandLetter(letter) {
-        if (!indexGrid) return;
-        const items = brandRegistry.filter(function (brand) {
-          return brandInitial(brand) === letter;
-        });
-
-        if (indexTitle) indexTitle.textContent = "Marki na literę " + letter;
-        if (indexCount) {
-          indexCount.textContent = items.length === 1
-            ? "1 pozycja w rejestrze"
-            : items.length + " pozycji w rejestrze";
-        }
-
-        if (!items.length) {
-          indexGrid.innerHTML = '<p class="brand-index-empty">Brak pozycji na tę literę w przekazanym rejestrze.</p>';
-        } else {
-          indexGrid.innerHTML = items.map(function (brand) {
-            const safe = brand.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-            const url = publishedBrandUrls[brand];
-            if (url) {
-              return '<a class="brand-index-item" href="' + url + '">' + safe + '</a>';
-            }
-            return '<div class="brand-index-item">' + safe + '</div>';
-          }).join("");
-        }
-
-        letterButtons.forEach(function (button) {
-          const active = button.getAttribute("data-brand-letter") === letter;
-          button.classList.toggle("is-active", active);
-          button.setAttribute("aria-pressed", active ? "true" : "false");
-        });
-      }
-
-      letterButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-          renderBrandLetter(button.getAttribute("data-brand-letter") || "A");
-        });
-      });
-
-      renderBrandLetter("A");
-
-
-      document.querySelectorAll('[data-year]').forEach(function (node) {
-        node.textContent = String(new Date().getFullYear());
-      });
-    }());
-  </script>
 </body>
 </html>
