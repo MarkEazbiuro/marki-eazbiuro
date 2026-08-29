@@ -1,7 +1,4 @@
-/* ============================================================
-   MARKI A-Z BIURO — WSPÓLNY HEADER I FOOTER
-   Ten plik ma pierwszeństwo nad historycznym CSS podstron.
-   ============================================================ */
+
 
 .site-header {
   position: sticky !important;
@@ -103,7 +100,7 @@
   cursor: pointer !important;
 }
 
-/* ŻADNYCH podkreśleń / kresek aktywnego menu z dawnych szablonów */
+
 .site-header .main-nav a::before,
 .site-header .main-nav a::after,
 .site-header .main-nav .nav-item::before,
@@ -169,7 +166,7 @@
   display: none !important;
 }
 
-/* WSPÓLNA STOPKA */
+
 .az-footer {
   padding: 0 0 20px !important;
   margin: 0 !important;
@@ -276,7 +273,7 @@
   font-size: .68rem !important;
 }
 
-/* RESPONSYWNOŚĆ IDENTYCZNA DLA WSZYSTKICH STRON */
+
 @media (max-width:1750px) and (min-width:1101px) {
   .site-header .header-inner {
     width: calc(100% - 40px) !important;
@@ -408,9 +405,7 @@
 }
 
 
-/* ============================================================
-   WSPÓLNY LAYOUT ŁADOWANY Z /includes/header.html I footer.html
-   ============================================================ */
+
 .marki-header-slot {
   display: block !important;
   min-height: 120px !important;
@@ -429,11 +424,7 @@
   .marki-header-slot { min-height: 78px !important; }
 }
 
-/* ============================================================
-   MARKI68 — OCHRONA PROPORCJI ZDJEC PRODUKTOW
-   Nie wymuszamy jednoczesnie szerokosci i wysokosci obrazu.
-   Obraz zawsze zachowuje naturalne proporcje wewnatrz kafelka.
-   ============================================================ */
+
 .brand-profile .product-window-image img,
 .brand-profile .product-tile-image img {
   display: block !important;
@@ -453,9 +444,7 @@
 
 
 
-/* ============================================================
-   MARKI — SEO / UX / GEO: wspólne bloki treści (partia 1)
-   ============================================================ */
+
 .az-service-bar-section {
   border-top: 1px solid #e5e9ed !important;
   border-bottom: 1px solid #e5e9ed !important;
@@ -496,13 +485,6 @@
 }
 .az-service-button--shop:hover,.az-service-button--shop:focus-visible {background:#aa0000 !important;border-color:#aa0000 !important;}
 
-.az-seo-intro {
-  max-width: 900px !important;
-  margin: 14px 0 0 !important;
-  color: #39434d !important;
-  font-size: 16px !important;
-  line-height: 1.72 !important;
-}
 .az-editorial-section {
   padding: 56px 0 !important;
   border-top: 1px solid #e5e9ed !important;
@@ -597,12 +579,7 @@
   .az-service-card{min-height:0 !important;}
 }
 
-/* ============================================================
-   FIX PARTIA 1 — pasek serwisów + statystyki profilu marki
-   Pasek CTA został dodany między hero a istniejącym blokiem
-   statystyk. Oryginalny ujemny translateY statystyk służył do
-   nachodzenia na hero, dlatego po dodaniu CTA powodował kolizję.
-   ============================================================ */
+
 .brand-profile .az-service-bar-section + .brand-quick {
   padding: 24px 0 32px !important;
 }
@@ -617,3 +594,37 @@
     transform: none !important;
   }
 }
+
+.az-topic-list{margin:0;padding-left:21px;color:#59636e;line-height:1.72}.az-topic-list li{margin:0 0 12px}.az-topic-list strong{color:#222831}.az-editorial-card p{line-height:1.72}
+
+
+.supplier-hero{padding:68px 0 58px;background:radial-gradient(circle at 82% 12%,rgba(16,95,166,.10),transparent 30%),linear-gradient(180deg,#fbfcfd 0%,#f4f7f9 100%);border-bottom:1px solid #e5e9ed}
+.supplier-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) 170px;align-items:center;gap:48px}
+.supplier-eyebrow{display:block;margin:0 0 12px;color:#cd0000;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.supplier-lead{max-width:930px;margin:20px 0 0;color:#59636e;font-size:17px;line-height:1.72}
+.supplier-mark{width:150px;height:150px;display:flex;align-items:center;justify-content:center;justify-self:end;color:#cd0000;background:#fff;border:1px solid #dbe3ea;border-radius:28px;box-shadow:0 18px 48px rgba(25,36,48,.12);font-size:72px!important;font-weight:800;line-height:1!important;text-transform:uppercase;overflow:hidden}
+.supplier-quick{padding:24px 0 30px;background:#f7f9fb;border-bottom:1px solid #e5e9ed}
+.supplier-quick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.supplier-fact{min-height:110px;padding:20px;background:#fff;border:1px solid #e1e6eb;border-radius:14px;box-shadow:0 8px 24px rgba(25,36,48,.05)}
+.supplier-fact span{display:block;margin-bottom:8px;color:#7b848d;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.supplier-fact strong{display:block;color:#222831;font-size:16px;line-height:1.4}
+.supplier-layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:42px;padding:64px 0 72px}
+.supplier-section{margin:0 0 52px}
+.supplier-section>h2{margin:0 0 16px;color:#222831;font-size:clamp(27px,3vw,38px);line-height:1.2}
+.supplier-section>p{margin:0 0 24px;color:#59636e;font-size:16px;line-height:1.72}
+.supplier-product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.supplier-product-card{min-height:280px;display:flex;flex-direction:column;padding:22px;color:#222831;background:#fff;border:1px solid #dfe5ea;border-radius:14px;box-shadow:0 8px 24px rgba(25,36,48,.06);text-decoration:none;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.supplier-product-card:hover,.supplier-product-card:focus-visible{transform:translateY(-2px);border-color:#b9cddd;box-shadow:0 14px 32px rgba(25,36,48,.11)}
+.supplier-product-card .product-letter{width:42px;height:42px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:#fff;background:#105fa6;border-radius:11px;font-weight:800}
+.supplier-product-card .product-kind{margin-bottom:9px;color:#cd0000;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+.supplier-product-card h3{margin:0 0 12px;color:#222831;font-size:16px;line-height:1.45;overflow-wrap:anywhere}
+.supplier-product-card p{margin:0 0 18px;color:#59636e;font-size:13px;line-height:1.65}
+.supplier-product-card .product-link{margin-top:auto;color:#105fa6;font-size:13px;font-weight:800}
+.supplier-tips{margin:0;padding-left:22px;color:#59636e;line-height:1.75}.supplier-tips li{margin-bottom:10px}
+.supplier-link-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.supplier-link-card{display:flex;min-height:105px;flex-direction:column;justify-content:center;padding:20px;color:#105fa6;background:#fff;border:1px solid #dfe5ea;border-radius:12px;font-weight:800;text-decoration:none}.supplier-link-card span{display:block;margin-top:7px;color:#59636e;font-size:12px;font-weight:600;line-height:1.5}
+.supplier-related a{display:inline-flex;padding:9px 13px;color:#105fa6;background:#eef6fc;border-radius:8px;font-weight:700;text-decoration:none}
+.supplier-faq{display:grid;gap:12px}.supplier-faq details{padding:16px 18px;background:#fff;border:1px solid #dfe5ea;border-radius:12px}.supplier-faq summary{cursor:pointer;color:#222831;font-weight:800}.supplier-faq p{margin:12px 0 0;color:#59636e;line-height:1.65}
+.supplier-side{display:grid;align-content:start;gap:16px}.supplier-side-card{padding:22px;background:#fff;border:1px solid #dfe5ea;border-radius:14px;box-shadow:0 8px 24px rgba(25,36,48,.05)}.supplier-side-card h2{margin:0 0 12px;font-size:19px}.supplier-side-card p{margin:0 0 14px;color:#59636e;font-size:14px;line-height:1.65}.supplier-side-card ul{margin:0;padding-left:18px}.supplier-side-card li{margin:8px 0}.supplier-side-card a{color:#105fa6;font-weight:700;text-decoration:none}.supplier-shop-button{display:flex!important;min-height:44px;align-items:center;justify-content:center;padding:10px 14px!important;color:#fff!important;background:#cd0000;border-radius:8px;text-align:center}.supplier-shop-button:hover,.supplier-shop-button:focus-visible{background:#aa0000}
+@media(max-width:980px){.supplier-hero-grid{grid-template-columns:minmax(0,1fr) 130px;gap:28px}.supplier-mark{width:120px;height:120px;font-size:58px!important}.supplier-layout{grid-template-columns:1fr}.supplier-side{grid-template-columns:repeat(2,minmax(0,1fr))}.supplier-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:640px){.supplier-hero{padding:48px 0 42px}.supplier-hero-grid{grid-template-columns:1fr}.supplier-mark{justify-self:start;width:108px;height:108px;font-size:52px!important;border-radius:24px}.supplier-lead{font-size:16px}.supplier-quick-grid,.supplier-product-grid,.supplier-link-grid,.supplier-side{grid-template-columns:1fr!important}.supplier-layout{padding:44px 0 56px}.supplier-fact{min-height:0}.supplier-product-card{min-height:0}}
