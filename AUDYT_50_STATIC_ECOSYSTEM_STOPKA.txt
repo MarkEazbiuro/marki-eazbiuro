@@ -1,0 +1,9 @@
+AUDYT FINALNY 50 STRON
+======================
+HTML: 50/50 PASS
+Produkty/okienka fingerprint: PASS
+Ecosystem A-Z Biuro: 50/50 statycznie w HTML PASS
+Stopka A-Z Biuro: 50/50 statycznie w HTML PASS
+Cienie kart: CSS osadzony lokalnie w każdej stronie PASS
+Brak zależności od dynamicznego ładowania stopki: PASS
+H1/opisy: pozostawione z poprzedniej paczki, bez modyfikacji
