@@ -1,0 +1,11 @@
+AUDYT NAPRAWCZY — 50 STRON
+================================
+Liczba stron HTML: 50
+Produkty: NIE MODYFIKOWANO — PASS
+Okienka produktów: NIE MODYFIKOWANO — PASS
+Footer slot data-shared-footer: 50/50 — PASS
+Shell script marki-shell.js: 50/50 — PASS
+Wspólny includes/footer.html: DODANY
+Cienie kart: WZMOCNIONE W ISTNIEJĄCYCH BLOKACH CSS — PASS
+H1 i treść redakcyjna: NIE MODYFIKOWANO W TEJ PACZCE
+Liczba plików wdrożeniowych w ZIP: 52 (50 stron + 2 pliki wspólne)
